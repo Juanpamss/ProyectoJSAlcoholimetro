@@ -1,0 +1,50 @@
+/**
+ * Usuario.js
+ *
+ * @description :: A model definition.  Represents a database table/collection/etc.
+ * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
+ */
+
+module.exports = {
+
+  attributes: {
+
+    nombre: {
+      type: 'string',
+      required: true
+    },
+
+    apellido: {
+      type: 'string',
+      required: true
+    },
+
+    nickname: {
+      type: 'string',
+      required: true
+    },
+
+    password: {
+      type: 'string',
+      required: true
+    },
+
+    roles: {
+      collection: 'Rol',
+      via: 'rolIdFK'
+    },
+
+    tests: {
+      collection: 'Test',
+      via: 'testIdFK'
+    },
+
+    pedidos: {
+      collection: 'Test',
+      via: 'usuarioIdFK'
+    }
+
+  },
+
+};
+
