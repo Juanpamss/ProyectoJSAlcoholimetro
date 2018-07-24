@@ -10,9 +10,9 @@ export class ServicioAlcoholimetroService {
 
   usuarioExistente : any []
 
-  consultarUsuario(nickname: string, password: string){
+  consultarUsuario(correo: string, password: string){
 
-    this.httpClient.get(`http://localhost:1337/usuario?nickname=${nickname}&password=${password}`)
+    this.httpClient.get(`http://localhost:1337/usuario?correo=${correo}&password=${password}`)
       .subscribe(
         (data:any[]) => {
           this.usuarioExistente = data
@@ -31,7 +31,7 @@ export class ServicioAlcoholimetroService {
 
     }).subscribe(
       res => {
-        //console.log(res);
+        console.log(res);
       }
     );
 
