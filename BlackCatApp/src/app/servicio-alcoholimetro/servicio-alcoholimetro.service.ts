@@ -31,7 +31,7 @@ export class ServicioAlcoholimetroService {
 
     }).subscribe(
       res => {
-        //console.log(res);
+        console.log(res);
       }
     );
 
