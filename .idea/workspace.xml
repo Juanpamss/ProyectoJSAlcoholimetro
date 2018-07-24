@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19243830-07e7-4661-88ed-151236376e04" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackCatApp/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/api/models/Usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/models/Usuario.js" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/BlackCatApp/src/app/app-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts" afterDir="false" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
+>>>>>>> 2a6907ef8e6dde23605f01de394df1284c20bb51
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -161,6 +174,13 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/BlackCatApp/node_modules" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+=======
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/BlackCatApp/package.json" />
@@ -171,6 +191,7 @@
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -227,7 +248,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExamenSegundoBimestreTWJ" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -258,15 +279,35 @@
       <workItem from="1530561061175" duration="225000" />
       <workItem from="1530568643700" duration="18000" />
       <workItem from="1530569070059" duration="2508000" />
+<<<<<<< HEAD
+      <workItem from="1531258645696" duration="1000000" />
+=======
       <workItem from="1532191770914" duration="177000" />
       <workItem from="1532200654336" duration="3018000" />
       <workItem from="1532389453717" duration="4973000" />
+<<<<<<< HEAD
       <workItem from="1532459427968" duration="2096000" />
+=======
+      <workItem from="1532459427968" duration="946000" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
+>>>>>>> 2a6907ef8e6dde23605f01de394df1284c20bb51
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="13015000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="3751000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
+=======
+    <option name="totallyTimeSpent" value="11865000" />
+>>>>>>> 2a6907ef8e6dde23605f01de394df1284c20bb51
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -274,13 +315,18 @@
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24256444" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2992126" />
+=======
       <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29943502" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
