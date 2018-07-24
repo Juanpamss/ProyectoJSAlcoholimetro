@@ -19,7 +19,7 @@ module.exports = {
       required: true
     },
 
-    nickname: {
+    correo: {
       type: 'string',
       required: true
     },

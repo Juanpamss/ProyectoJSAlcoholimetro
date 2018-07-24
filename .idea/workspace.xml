@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19243830-07e7-4661-88ed-151236376e04" name="Default" comment="" />
+    <list default="true" id="19243830-07e7-4661-88ed-151236376e04" name="Default" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/models/Usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/models/Usuario.js" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/BlackCatApp/src/app/app-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts" afterDir="false" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
+>>>>>>> 2a6907ef8e6dde23605f01de394df1284c20bb51
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,8 +37,8 @@
       <file leaf-file-name="Usuario.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/api/models/Usuario.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="12" />
+            <state relative-caret-position="272">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -26,8 +46,8 @@
       <file leaf-file-name="servicio-alcoholimetro.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="238">
+              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -35,67 +55,100 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts">
+=======
+      <file leaf-file-name="app.routes.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.routes.ts">
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            <state relative-caret-position="187">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
-                <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.component.ts">
+      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bebida.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/api/models/Bebida.js">
+      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="85">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pedido.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/api/models/Pedido.js">
+      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="272">
+              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/api/models/Test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="20" selection-start-line="20" selection-end-line="20" />
+=======
+      <file leaf-file-name="login.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2380">
+              <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rol.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/api/models/Rol.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/styles.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackCatApp/src/main.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,14 +161,26 @@
         <option value="$PROJECT_DIR$/backend/api/models/Fiesta.js" />
         <option value="$PROJECT_DIR$/backend/api/models/Lugar.js" />
         <option value="$PROJECT_DIR$/backend/api/models/Invitacion.js" />
-        <option value="$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/backend/api/models/Pedido.js" />
-        <option value="$PROJECT_DIR$/backend/api/models/Usuario.js" />
         <option value="$PROJECT_DIR$/backend/api/models/Bebida.js" />
         <option value="$PROJECT_DIR$/backend/config/security.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/BlackCatApp/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts" />
         <option value="$PROJECT_DIR$/BlackCatApp/src/app/app.component.ts" />
+=======
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/app-routes.ts" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/app.routes.ts" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/index.html" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.css" />
+        <option value="$PROJECT_DIR$/backend/api/models/Usuario.js" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.html" />
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
       </list>
     </option>
   </component>
@@ -127,8 +192,14 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/BlackCatApp/node_modules" />
-    <handled-path value="$PROJECT_DIR$/backend/node_modules" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+=======
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/BlackCatApp/package.json" />
@@ -139,12 +210,14 @@
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,18 +249,25 @@
               <item name="BlackCatApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoJSAlcoholimetro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoJSAlcoholimetro" type="462c0819:PsiDirectoryNode" />
+              <item name="BlackCatApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="servicio-alcoholimetro" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExamenSegundoBimestreTWJ" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -218,27 +298,70 @@
       <workItem from="1530561061175" duration="225000" />
       <workItem from="1530568643700" duration="18000" />
       <workItem from="1530569070059" duration="2508000" />
+<<<<<<< HEAD
+      <workItem from="1531258645696" duration="1000000" />
+=======
       <workItem from="1532191770914" duration="177000" />
       <workItem from="1532200654336" duration="3018000" />
+<<<<<<< HEAD
       <workItem from="1532389453717" duration="5658000" />
+=======
+      <workItem from="1532389453717" duration="4973000" />
+<<<<<<< HEAD
+      <workItem from="1532459427968" duration="2096000" />
+=======
+      <workItem from="1532459427968" duration="946000" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
+>>>>>>> 2a6907ef8e6dde23605f01de394df1284c20bb51
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="11604000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="13015000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="3751000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
+=======
+    <option name="totallyTimeSpent" value="11865000" />
+>>>>>>> 2a6907ef8e6dde23605f01de394df1284c20bb51
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info anchor="bottom" id="TypeScript" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24256444" />
+=======
+      <window_info anchor="bottom" id="TypeScript" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24256444" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29943502" />
+=======
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2992126" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29943502" />
+>>>>>>> 385433c7bd016fbab19a8231e6147d834fda7423
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -257,6 +380,71 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/backend/api/models/Usuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/models/Bebida.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/models/Pedido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/models/Test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/models/Rol.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/api/models/Usuario.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -336,20 +524,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/api/models/Rol.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="391">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/api/models/Usuario.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="204">
           <caret line="21" column="12" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="12" />
+=======
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/config/security.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="156">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
         </state>
@@ -364,30 +558,81 @@
           <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+=======
+        <state relative-caret-position="374">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/models/Pedido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.component.ts">
+=======
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/app.routes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/main.ts">
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/backend/api/models/Bebida.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -406,6 +651,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
+=======
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/models/Usuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/servicio-alcoholimetro/servicio-alcoholimetro.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+>>>>>>> 47c17c6382058ad66cbdbe1249e5a719e0ac432d
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackCatApp/src/app/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
