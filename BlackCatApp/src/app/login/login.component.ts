@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 
 @Component({
   selector: 'app-login',
@@ -10,16 +11,18 @@ export class LoginComponent implements OnInit {
   correo: string
   password: string
 
-  constructor() { }
+  constructor(private _servicioAlcoholimetro:ServicioAlcoholimetroService) { }
 
   ngOnInit() {
   }
 
-  datosRegistro(event, formData){
+  consultaUsuario(event, formData){
     console.log(event);
     console.log(formData.value);
-    this.correo=formData.value.correo.toString();
-    this.password=formData.value.password.toString();
+    //this.correo=formData.value.correo.toString();
+    //this.password=formData.value.password.toString();
+
+    //this._servicioAlcoholimetro.consultarUsuario(this.correo, this.password);
 
   }
 
