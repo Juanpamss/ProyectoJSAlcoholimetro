@@ -20,13 +20,13 @@ export class ServicioAlcoholimetroService {
       )
   }
 
-  crearUsuario(nombre: string, apellido: string, nickname: string, password: string){
+  crearUsuario(nombre: string, apellido: string, correo: string, password: string){
 
     this.httpClient.post(`http://localhost:1337/usuario`, {
 
       nombre : nombre,
       apellido: apellido,
-      nickname: nickname,
+      correo: correo,
       password : password
 
     }).subscribe(

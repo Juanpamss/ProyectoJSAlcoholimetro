@@ -5,6 +5,7 @@ import {RUTAS_APP} from "./app.routes";
 import {RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
 
       RUTAS_APP, {useHash: true}
 
-    )
+    ),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
