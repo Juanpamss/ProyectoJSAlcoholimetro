@@ -9,6 +9,17 @@ export class ServicioAlcoholimetroService {
   constructor(private httpClient: HttpClient) { }
 
   usuarioExistente : any []
+   private logStatus=false;
+
+  setLogguedIn(value: boolean){
+    this.logStatus=value;
+  }
+
+
+
+  get isLogguedIn(){
+    return this.logStatus;
+  }
 
   consultarUsuario(correo: string, password: string){
 

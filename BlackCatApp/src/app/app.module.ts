@@ -6,13 +6,18 @@ import {RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
+
+import {AuthGuard} from "./guards/auth.guard";
 import { RegistroComponent } from './registro/registro.component';
+import { HomeComponent } from './home/home.component';
+import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-alcoholimetro.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { RegistroComponent } from './registro/registro.component';
     ),
     FormsModule
   ],
-  providers: [],
+  providers: [ServicioAlcoholimetroService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

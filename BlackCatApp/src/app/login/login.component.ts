@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   correo: string
   password: string
 
-  constructor(private _servicioAlcoholimetro:ServicioAlcoholimetroService) { }
+  constructor(private _servicioAlcoholimetro:ServicioAlcoholimetroService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -19,10 +20,16 @@ export class LoginComponent implements OnInit {
   consultaUsuario(event, formData){
     console.log(event);
     console.log(formData.value);
-    //this.correo=formData.value.correo.toString();
-    //this.password=formData.value.password.toString();
 
-    //this._servicioAlcoholimetro.consultarUsuario(this.correo, this.password);
+
+    this._servicioAlcoholimetro.consultarUsuario(this.correo, this.password);
+    console.log(this._servicioAlcoholimetro.usuarioExistente);
+    if(this._servicioAlcoholimetro.usuarioExistente==null){
+      alert('vrg')
+    }else{
+      this._servicioAlcoholimetro.setLogguedIn(true);
+      this.router.navigate(['home']);
+    }
 
   }
 
