@@ -40,7 +40,7 @@ module.exports = {
     },
 
     pedidos: {
-      collection: 'Test',
+      collection: 'Pedido',
       via: 'usuarioIdFK'
     }
 
