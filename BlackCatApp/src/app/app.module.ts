@@ -11,13 +11,15 @@ import {AuthGuard} from "./guards/auth.guard";
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-alcoholimetro.service";
+import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
-    HomeComponent
+    HomeComponent,
+    BarraNavegacionComponent
   ],
   imports: [
     BrowserModule,
