@@ -6,10 +6,13 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ServicioAlcoholimetroService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.usuarioExistente=[];
+  }
 
-  usuarioExistente : any []
-   private logStatus=false;
+  private usuarioExistente : any []
+  private estado;
+  private logStatus=false;
 
   setLogguedIn(value: boolean){
     this.logStatus=value;
@@ -21,12 +24,28 @@ export class ServicioAlcoholimetroService {
     return this.logStatus;
   }
 
-  consultarUsuario(correo: string, password: string){
+  get getUsuario(){
+    return this.usuarioExistente
+  }
 
-    this.httpClient.get(`http://localhost:1337/usuario?correo=${correo}&password=${password}`)
+  get getEstado(){
+    return this.estado;
+  }
+
+   public consultarUsuario(correo: string, password: string){
+
+    this.httpClient.get('http://localhost:1337/usuario?correo='+correo+'&password='+password)
       .subscribe(
         (data:any[]) => {
           this.usuarioExistente = data
+          if(data.length==0){
+           this.estado=false;
+
+          }else{
+            this.usuarioExistente = data[0];
+            this.estado= true;
+          }
+
         }
       )
   }

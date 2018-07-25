@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 import {Router} from "@angular/router";
+import {AuthService} from "../servicios/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -9,28 +10,48 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  correo: string
-  password: string
+  correo1: string;
+  password1: string;
+  estado: boolean;
 
-  constructor(private _servicioAlcoholimetro:ServicioAlcoholimetroService, private router:Router) { }
+  constructor(private _auth: AuthService, private router:Router) { }
 
   ngOnInit() {
+
   }
 
-  consultaUsuario(event, formData){
+
+  ingresoUsuario(event, formData){
     console.log(event);
-    console.log(formData.value);
+    console.log('form',formData.value.correo);
 
+    const target = event.target
+    const correo = target.querySelector('#correo').value
+    const password = target.querySelector('#password').value
 
-    this._servicioAlcoholimetro.consultarUsuario(this.correo, this.password);
-    console.log(this._servicioAlcoholimetro.usuarioExistente);
-    if(this._servicioAlcoholimetro.usuarioExistente==null){
-      alert('vrg')
-    }else{
-      this._servicioAlcoholimetro.setLogguedIn(true);
+    this._auth.consultarUsuario(correo,password);
+    console.log(this._auth.getEstado)
+    this.ingreso(this._auth.getEstado);
+    //this.estado=this._auth.getEstado;
+    //console.log('form',this._servicioAlcoholimetro.getUsuario);
+
+    //console.log(this._servicioAlcoholimetro.getUsuario);
+    /*if(this.estado==true){
+      this._auth.setLogguedIn(true);
       this.router.navigate(['home']);
-    }
+    }else{
+      alert('Credenciales no validas')
+    }*/
 
+
+  }
+
+  ingreso(estado: boolean){
+    if(estado==true){
+      this._auth.setLogguedIn(true);
+      this.router.navigate(['home']);
+    }else{
+      alert('Credenciales no validas')
   }
 
 

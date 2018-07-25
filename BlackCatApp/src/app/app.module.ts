@@ -11,6 +11,7 @@ import {AuthGuard} from "./guards/auth.guard";
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-alcoholimetro.service";
+import {AuthService} from "./servicios/auth.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-al
     ),
     FormsModule
   ],
-  providers: [ServicioAlcoholimetroService,AuthGuard],
+  providers: [ServicioAlcoholimetroService,AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
