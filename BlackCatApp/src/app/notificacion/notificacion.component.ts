@@ -11,6 +11,8 @@ export class NotificacionComponent implements OnInit {
   @Input() arregloNotificacion : any[]
   @Input() arregloFiesta : any
 
+  buscar : string
+
   fiesta: any[]
 
   constructor(private _servicio: ServicioAlcoholimetroService) { }
@@ -19,6 +21,17 @@ export class NotificacionComponent implements OnInit {
 
     console.log('notifi:', this.arregloNotificacion)
     console.log('fiesta:', this.arregloFiesta)
+
+  }
+
+  onNameKeyUp(event:any){
+
+    this.buscar = event.target.value;
+
+  }
+
+  getProfile(){
+
 
   }
 

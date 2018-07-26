@@ -17,6 +17,7 @@ import {AuthService} from "./servicios/auth.service";
 
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 import { PortalComponent } from './portal/portal.component';
+import { NavegadorSecundarioComponent } from './navegador-secundario/navegador-secundario.component';
 
 
 
@@ -28,7 +29,8 @@ import { PortalComponent } from './portal/portal.component';
     HomeComponent,
     BarraNavegacionComponent,
     NotificacionComponent,
-    PortalComponent
+    PortalComponent,
+    NavegadorSecundarioComponent
 
   ],
   imports: [
