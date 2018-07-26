@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
 
     fechaFiesta: {
-      type: 'number',
+      type: 'string',
       required: true
     },
 

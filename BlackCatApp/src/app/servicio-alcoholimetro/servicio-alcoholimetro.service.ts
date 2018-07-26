@@ -6,13 +6,14 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ServicioAlcoholimetroService {
 
-  constructor(private httpClient: HttpClient) {
-    this.usuarioExistente=[];
-  }
-
   private usuarioExistente : any []
   private estado;
   private logStatus=false;
+  private invitaciones : any[]
+
+  constructor(private httpClient: HttpClient) {
+    this.usuarioExistente=[];
+  }
 
   setLogguedIn(value: boolean){
     this.logStatus=value;
@@ -66,6 +67,22 @@ export class ServicioAlcoholimetroService {
     );
 
 
+  }
+
+  consultarInvitaciones(): any[]{
+
+    this.httpClient.get('http://localhost:1337/invitacion?usuarioIdFK=1')
+      .subscribe(
+        (data:any[]) => {
+
+          console.log('respuesta server:', data)
+
+          this.invitaciones = data
+
+        }
+      )
+
+      return this.invitaciones
   }
 
 

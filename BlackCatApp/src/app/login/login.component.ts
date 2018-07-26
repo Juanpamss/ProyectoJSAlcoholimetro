@@ -16,8 +16,12 @@ export class LoginComponent implements OnInit {
   estado: boolean;
   usuarioExistente=[]
 
+<<<<<<< HEAD
   constructor(private http: HttpClient,private _auth: AuthService, private router:Router) {
     this.estado=false;
+=======
+  constructor(private _auth: AuthService, private router: Router) {
+>>>>>>> 4f741871a632776ef986cd29c968a843ce8e86ae
   }
 
   ngOnInit() {
@@ -25,19 +29,25 @@ export class LoginComponent implements OnInit {
   }
 
 
-  ingresoUsuario(event, formData){
-    console.log(event);
-    console.log('form',formData.value.correo);
+  ingresoUsuario(event, formData) {
+    //console.log(event);
+    //console.log('form', formData.value.correo);
 
     event.preventDefault();
     const target = event.target
     const correo = target.querySelector('#correo').value
     const password = target.querySelector('#password').value
 
+<<<<<<< HEAD
     this._auth.consultarUsuario(correo,password);
 
     console.log(this.estado)
     //this.ingreso(this.estado);
+=======
+    this._auth.consultarUsuario(correo, password);
+    //console.log(this._auth.getEstado)
+    this.ingreso(this._auth.getEstado);
+>>>>>>> 4f741871a632776ef986cd29c968a843ce8e86ae
     //this.estado=this._auth.getEstado;
     //console.log('form',this._servicioAlcoholimetro.getUsuario);
 
@@ -52,4 +62,18 @@ export class LoginComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
+=======
+  ingreso(estado: boolean) {
+    if (estado == true) {
+      this._auth.setLogguedIn(true);
+      this.router.navigate(['home']);
+    } else {
+      alert('Credenciales no validas')
+    }
+
+
+  }
+
+>>>>>>> 4f741871a632776ef986cd29c968a843ce8e86ae
 }

@@ -9,11 +9,6 @@ module.exports = {
 
   attributes: {
 
-    cantidad: {
-      type: 'number',
-      required: true
-    },
-
     fiestaIdFK:{
       model: 'Fiesta',
     },

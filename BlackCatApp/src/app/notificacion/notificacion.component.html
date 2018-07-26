@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="card flex-row flex-wrap" style="margin-left: 40px" *ngFor="let info of arregloNotificacion; let indice = index">
+      <div class="card-header border-0">
+        <img src="http://www.ensucumple.com/wp-content/uploads/2016/05/logo-la-bipolar.jpg" alt="">
+      </div>
+      <div class="card-block px-2">
+        <h4 class="card-title">{{info.id}}</h4>
+        <p class="card-text">Descripcion</p>
+        <a href="#" class="btn btn-primary">Ver</a>
+      </div>
+      <div class="w-100"></div>
+      <div class="card-footer w-100 text-muted">
+        FOOTER
+      </div>
+    </div>
+  </div>
+</div>
+

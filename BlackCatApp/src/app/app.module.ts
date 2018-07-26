@@ -6,16 +6,18 @@ import {RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
-
 import {AuthGuard} from "./guards/auth.guard";
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-alcoholimetro.service";
 
+import { NotificacionComponent } from './notificacion/notificacion.component';
+
 import {AuthService} from "./servicios/auth.service";
 
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 import { PortalComponent } from './portal/portal.component';
+
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { PortalComponent } from './portal/portal.component';
     RegistroComponent,
     HomeComponent,
     BarraNavegacionComponent,
+    NotificacionComponent,
     PortalComponent
+
   ],
   imports: [
     BrowserModule,

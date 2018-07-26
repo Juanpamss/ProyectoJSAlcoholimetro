@@ -9,6 +9,11 @@ module.exports = {
 
   attributes: {
 
+    nombre: {
+      type: 'string',
+      required: true
+    },
+
     direccion: {
       type: 'string',
       required: true
@@ -24,7 +29,7 @@ module.exports = {
       required: true
     },
 
-    numParqueaderos: {
+    imagenLugar: {
       type: 'string',
       required: true
     },
