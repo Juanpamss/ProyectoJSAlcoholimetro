@@ -18,6 +18,10 @@ import {AuthService} from "./servicios/auth.service";
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 import { PortalComponent } from './portal/portal.component';
 import { NavegadorSecundarioComponent } from './navegador-secundario/navegador-secundario.component';
+import { AdminFiestaComponent } from './admin-fiesta/admin-fiesta.component';
+import { NuevaFiestaComponent } from './nueva-fiesta/nueva-fiesta.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -30,12 +34,16 @@ import { NavegadorSecundarioComponent } from './navegador-secundario/navegador-s
     BarraNavegacionComponent,
     NotificacionComponent,
     PortalComponent,
-    NavegadorSecundarioComponent
+    NavegadorSecundarioComponent,
+    AdminFiestaComponent,
+    NuevaFiestaComponent,
+
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot(
 
       RUTAS_APP, {useHash: false}
