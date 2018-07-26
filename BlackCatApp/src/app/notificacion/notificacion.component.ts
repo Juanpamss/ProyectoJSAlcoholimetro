@@ -9,6 +9,7 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 export class NotificacionComponent implements OnInit {
 
   @Input() arregloNotificacion : any[]
+  @Input() arregloFiesta : any
 
   fiesta: any[]
 
@@ -16,14 +17,17 @@ export class NotificacionComponent implements OnInit {
 
   ngOnInit() {
 
+    console.log('notifi:', this.arregloNotificacion)
+    console.log('fiesta:', this.arregloFiesta)
+
   }
 
-  consultarFiesta(idFiesta): any{
+  /*consultarFiesta(idFiesta): any{
 
     this.fiesta = this._servicio.consultarFiesta(idFiesta)
 
     console.log('fiesta:', this.fiesta)
 
-  }
+  }*/
 
 }

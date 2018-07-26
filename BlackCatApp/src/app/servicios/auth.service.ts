@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs/index";
 import {Router} from "@angular/router";
+import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private _http: HttpClient, private router: Router) {
+  constructor(private _http: HttpClient, private router: Router, private _servicio: ServicioAlcoholimetroService) {
   }
 
   private logStatus = false;
@@ -32,7 +33,7 @@ export class AuthService {
     this._http.get('http://localhost:1337/usuario?correo=' + correo + '&password=' + password)
       .subscribe(
         (data: any[]) => {
-          console.log(data)
+          //console.log(data)
           if (data.length == 0) {
             this.estado = false;
             this.ingreso(this.estado)
@@ -43,10 +44,10 @@ export class AuthService {
             this.ingreso(this.estado)
 
           }
-          console.log(this.estado)
+          //console.log(this.estado)
         },
         (err) => {
-          console.log(err);
+          //console.log(err);
         }
       )
 

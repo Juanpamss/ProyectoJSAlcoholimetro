@@ -9,29 +9,10 @@ export class ServicioAlcoholimetroService {
   private usuarioExistente : any []
   private fiesta : any []
   private estado;
-  private logStatus=false;
   private invitaciones : any[]
 
   constructor(private httpClient: HttpClient) {
     this.usuarioExistente=[];
-  }
-
-  setLogguedIn(value: boolean){
-    this.logStatus=value;
-  }
-
-
-
-  get isLogguedIn(){
-    return this.logStatus;
-  }
-
-  get getUsuario(){
-    return this.usuarioExistente
-  }
-
-  get getEstado(){
-    return this.estado;
   }
 
    public consultarUsuario(correo: string, password: string){
@@ -76,8 +57,6 @@ export class ServicioAlcoholimetroService {
       .subscribe(
         (data:any[]) => {
 
-          console.log('respuesta server:', data)
-
           this.invitaciones = data
 
         }
@@ -86,13 +65,11 @@ export class ServicioAlcoholimetroService {
       return this.invitaciones
   }
 
-  consultarFiesta(idFiesta): any[]{
+  consultarFiesta(): any[]{
 
-    this.httpClient.get('http://localhost:1337/fiesta/' + idFiesta)
+    this.httpClient.get('http://localhost:1337/fiesta/1')
       .subscribe(
         (data:any[]) => {
-
-          console.log('respuesta server:', data)
 
            this.fiesta = data
 

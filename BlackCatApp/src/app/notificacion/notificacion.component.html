@@ -3,7 +3,7 @@
     <div class="card" style="width: 40rem;" *ngFor="let info of arregloNotificacion; let indice = index">
       <img class="rounded float-right" src="http://www.ensucumple.com/wp-content/uploads/2016/05/logo-la-bipolar.jpg" alt="Card image cap">
       <div class="card-body">
-        <h4 class="card-title"></h4>
+        <h4 class="card-title">Lugar: {{arregloFiesta.fiestaIdFK.nombre}}</h4>
         <p class="card-text">Fecha: {{info.fiestaIdFK.fechaFiesta}}</p>
         <p class="card-text">Hora:{{info.fiestaIdFK.horaInicio}}</p>
         <button class="btn btn-primary">Ver</button>

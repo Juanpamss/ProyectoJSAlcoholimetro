@@ -10,6 +10,7 @@ import {AuthService} from "../servicios/auth.service";
 export class HomeComponent implements OnInit {
 
   notificaciones : any []
+  fiestas : any []
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
 
@@ -17,15 +18,25 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.consultarInvitacionesUsuario()
-
   }
 
   consultarInvitacionesUsuario(){
 
     this.notificaciones = this._servicio.consultarInvitaciones()
 
-    console.log('home:', this.notificaciones)
+    console.log('arreglo invitacion:', this.notificaciones)
+
+    this.consultarFiesta()
+
+  }
+
+  consultarFiesta(){
+
+    //this.notificaciones[0].fiestaIdFK.fiestaIdFK
+
+    this.fiestas = this._servicio.consultarFiesta()
+
+    console.log('arreglo fiesta:', this.fiestas)
 
   }
 
