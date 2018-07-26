@@ -14,22 +14,23 @@ export class LoginComponent implements OnInit {
   password1: string;
   estado: boolean;
 
-  constructor(private _auth: AuthService, private router:Router) { }
+  constructor(private _auth: AuthService, private router: Router) {
+  }
 
   ngOnInit() {
 
   }
 
 
-  ingresoUsuario(event, formData){
+  ingresoUsuario(event, formData) {
     console.log(event);
-    console.log('form',formData.value.correo);
+    console.log('form', formData.value.correo);
 
     const target = event.target
     const correo = target.querySelector('#correo').value
     const password = target.querySelector('#password').value
 
-    this._auth.consultarUsuario(correo,password);
+    this._auth.consultarUsuario(correo, password);
     console.log(this._auth.getEstado)
     this.ingreso(this._auth.getEstado);
     //this.estado=this._auth.getEstado;
@@ -46,13 +47,15 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ingreso(estado: boolean){
-    if(estado==true){
+  ingreso(estado: boolean) {
+    if (estado == true) {
       this._auth.setLogguedIn(true);
       this.router.navigate(['home']);
-    }else{
+    } else {
       alert('Credenciales no validas')
-  }
+    }
 
+
+  }
 
 }

@@ -6,16 +6,14 @@ import {RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
-
 import {AuthGuard} from "./guards/auth.guard";
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-alcoholimetro.service";
-<<<<<<< HEAD
 import {AuthService} from "./servicios/auth.service";
-=======
+import { NotificacionComponent } from './notificacion/notificacion.component';
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
->>>>>>> ea25b465ebd2b6b7518aaff8f234042c304c61da
+
 
 @NgModule({
   declarations: [
@@ -23,7 +21,8 @@ import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.co
     LoginComponent,
     RegistroComponent,
     HomeComponent,
-    BarraNavegacionComponent
+    BarraNavegacionComponent,
+    NotificacionComponent
   ],
   imports: [
     BrowserModule,
