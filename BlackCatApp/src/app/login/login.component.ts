@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   correo1: string;
   password1: string;
   estado: boolean;
-  usuarioExistente=[]
-  invitacionesUsuario: any[]
+  fiestaUsuario: any = []
+  invitacionesUsuario: any = []
 
 
   constructor(private http: HttpClient,private _auth: AuthService, private router:Router, private _servicio: ServicioAlcoholimetroService) {
@@ -62,6 +62,15 @@ export class LoginComponent implements OnInit {
 
   ingreso(estado: boolean) {
     if (estado == true) {
+
+      this.invitacionesUsuario = this._servicio.consultarInvitaciones()
+      this.fiestaUsuario = this._servicio.consultarFiesta()
+
+      console.log('invis login:', this.invitacionesUsuario)
+      this._servicio.cambiarMensaje(this.invitacionesUsuario)
+      this._servicio.cambiarMensaje2(this.fiestaUsuario)
+
+
       this._auth.setLogguedIn(true);
       this.router.navigate(['home']);
     } else {

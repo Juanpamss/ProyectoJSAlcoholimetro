@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 
 @Component({
   selector: 'app-navegador-secundario',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavegadorSecundarioComponent implements OnInit {
 
-  constructor() { }
+  notificaciones : any = []
+
+  constructor(private _servicio: ServicioAlcoholimetroService) { }
 
   ngOnInit() {
+
+    this._servicio.mensajeActual.subscribe(mensaje => this.notificaciones = mensaje)
+
   }
 
 }
