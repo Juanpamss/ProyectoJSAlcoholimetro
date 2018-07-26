@@ -31,6 +31,6 @@ export const RUTAS_APP: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'portal'
   }
 ];

@@ -32,7 +32,7 @@ import { PortalComponent } from './portal/portal.component';
     HttpClientModule,
     RouterModule.forRoot(
 
-      RUTAS_APP, {useHash: true}
+      RUTAS_APP, {useHash: false}
 
     ),
     FormsModule
