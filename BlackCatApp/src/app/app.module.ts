@@ -11,11 +11,12 @@ import {AuthGuard} from "./guards/auth.guard";
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-alcoholimetro.service";
-<<<<<<< HEAD
+
 import {AuthService} from "./servicios/auth.service";
-=======
+
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
->>>>>>> ea25b465ebd2b6b7518aaff8f234042c304c61da
+import { PortalComponent } from './portal/portal.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.co
     LoginComponent,
     RegistroComponent,
     HomeComponent,
-    BarraNavegacionComponent
+    BarraNavegacionComponent,
+    PortalComponent
   ],
   imports: [
     BrowserModule,
