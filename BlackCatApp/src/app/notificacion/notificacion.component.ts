@@ -8,12 +8,12 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 })
 export class NotificacionComponent implements OnInit {
 
-  @Input() arregloNotificacion : any[]
-  @Input() arregloFiesta : any
+  @Input() arregloNotificacion : any = []
+  @Input() arregloFiesta : any = []
 
   buscar : string
 
-  fiesta: any[]
+  fiesta: any = []
 
   constructor(private _servicio: ServicioAlcoholimetroService) { }
 
@@ -29,18 +29,5 @@ export class NotificacionComponent implements OnInit {
     this.buscar = event.target.value;
 
   }
-
-  getProfile(){
-
-
-  }
-
-  /*consultarFiesta(idFiesta): any{
-
-    this.fiesta = this._servicio.consultarFiesta(idFiesta)
-
-    console.log('fiesta:', this.fiesta)
-
-  }*/
 
 }
