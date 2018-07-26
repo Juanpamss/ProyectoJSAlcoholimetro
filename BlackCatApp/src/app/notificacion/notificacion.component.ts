@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-notificacion',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notificacion.component.css']
 })
 export class NotificacionComponent implements OnInit {
+
+  @Input() arregloNotificacion : any[]
 
   constructor() { }
 

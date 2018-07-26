@@ -23,15 +23,15 @@ export class LoginComponent implements OnInit {
 
 
   ingresoUsuario(event, formData) {
-    console.log(event);
-    console.log('form', formData.value.correo);
+    //console.log(event);
+    //console.log('form', formData.value.correo);
 
     const target = event.target
     const correo = target.querySelector('#correo').value
     const password = target.querySelector('#password').value
 
     this._auth.consultarUsuario(correo, password);
-    console.log(this._auth.getEstado)
+    //console.log(this._auth.getEstado)
     this.ingreso(this._auth.getEstado);
     //this.estado=this._auth.getEstado;
     //console.log('form',this._servicioAlcoholimetro.getUsuario);
@@ -58,5 +58,4 @@ export class LoginComponent implements OnInit {
 
   }
 
-}
 }

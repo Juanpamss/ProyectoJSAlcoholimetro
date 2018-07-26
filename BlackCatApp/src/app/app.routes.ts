@@ -20,7 +20,7 @@ export const RUTAS_APP: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
 
   {
