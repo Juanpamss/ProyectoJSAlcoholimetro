@@ -9,8 +9,9 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 })
 export class AuthService {
 
-  invitacionesUsuario : any[]
-  fiestaUsuario : any[]
+  invitacionesUsuario : any = []
+  
+  fiestaUsuario : any = []
 
   constructor(private _http: HttpClient, private router: Router, private _servicio: ServicioAlcoholimetroService) {
   }

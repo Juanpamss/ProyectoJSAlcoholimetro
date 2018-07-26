@@ -8,7 +8,7 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 })
 export class NavegadorSecundarioComponent implements OnInit {
 
-  notificaciones : any[] = [{nombre : "Hola"}]
+  notificaciones : any = []
 
   constructor(private _servicio: ServicioAlcoholimetroService) { }
 

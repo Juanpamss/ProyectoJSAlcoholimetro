@@ -19,6 +19,8 @@ export class NotificacionComponent implements OnInit {
 
   ngOnInit() {
 
+    this._servicio.mensajeActual.subscribe(mensaje => this.arregloNotificacion = mensaje)
+
     console.log('notifi:', this.arregloNotificacion)
     console.log('fiesta:', this.arregloFiesta)
 
@@ -29,5 +31,14 @@ export class NotificacionComponent implements OnInit {
     this.buscar = event.target.value;
 
   }
+
+  eliminar(indice){
+
+    this.arregloNotificacion.splice(indice,1)
+
+    this._servicio.cambiarMensaje(this.arregloNotificacion)
+
+  }
+
 
 }

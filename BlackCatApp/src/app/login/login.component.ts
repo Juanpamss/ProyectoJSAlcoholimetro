@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   correo1: string;
   password1: string;
   estado: boolean;
-  fiestaUsuario=[]
+  fiestaUsuario: any = []
   invitacionesUsuario: any = []
 
 
