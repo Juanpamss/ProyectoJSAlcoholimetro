@@ -10,9 +10,17 @@ import {AuthGuard} from "./guards/auth.guard";
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import {ServicioAlcoholimetroService} from "./servicio-alcoholimetro/servicio-alcoholimetro.service";
+<<<<<<< HEAD
 import {AuthService} from "./servicios/auth.service";
 import { NotificacionComponent } from './notificacion/notificacion.component';
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
+=======
+
+import {AuthService} from "./servicios/auth.service";
+
+import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
+import { PortalComponent } from './portal/portal.component';
+>>>>>>> 76453d8ee29b15e6ea084e0645723d9b51a14448
 
 
 @NgModule({
@@ -22,7 +30,11 @@ import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.co
     RegistroComponent,
     HomeComponent,
     BarraNavegacionComponent,
+<<<<<<< HEAD
     NotificacionComponent
+=======
+    PortalComponent
+>>>>>>> 76453d8ee29b15e6ea084e0645723d9b51a14448
   ],
   imports: [
     BrowserModule,
