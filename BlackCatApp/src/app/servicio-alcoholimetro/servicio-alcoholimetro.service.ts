@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 export class ServicioAlcoholimetroService {
 
   private usuarioExistente : any []
+  private fiesta : any []
   private estado;
   private logStatus=false;
   private invitaciones : any[]
@@ -83,6 +84,23 @@ export class ServicioAlcoholimetroService {
       )
 
       return this.invitaciones
+  }
+
+  consultarFiesta(idFiesta): any[]{
+
+    this.httpClient.get('http://localhost:1337/fiesta/' + idFiesta)
+      .subscribe(
+        (data:any[]) => {
+
+          console.log('respuesta server:', data)
+
+           this.fiesta = data
+
+        }
+      )
+
+    return this.fiesta
+
   }
 
 

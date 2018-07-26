@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
 
   notificaciones : any []
 
-  constructor(private _servicio: ServicioAlcoholimetroService) { }
+  constructor(private _servicio: ServicioAlcoholimetroService) {
+
+  }
 
   ngOnInit() {
 

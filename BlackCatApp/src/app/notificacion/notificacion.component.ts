@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 
 @Component({
   selector: 'app-notificacion',
@@ -9,9 +10,20 @@ export class NotificacionComponent implements OnInit {
 
   @Input() arregloNotificacion : any[]
 
-  constructor() { }
+  fiesta: any[]
+
+  constructor(private _servicio: ServicioAlcoholimetroService) { }
 
   ngOnInit() {
+
+  }
+
+  consultarFiesta(idFiesta): any{
+
+    this.fiesta = this._servicio.consultarFiesta(idFiesta)
+
+    console.log('fiesta:', this.fiesta)
+
   }
 
 }
