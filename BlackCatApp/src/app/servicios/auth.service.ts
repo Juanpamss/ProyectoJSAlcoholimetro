@@ -10,7 +10,7 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 export class AuthService {
 
   invitacionesUsuario : any = []
-  
+
   fiestaUsuario : any = []
 
   constructor(private _http: HttpClient, private router: Router, private _servicio: ServicioAlcoholimetroService) {
@@ -66,7 +66,7 @@ export class AuthService {
       this._servicio.cambiarMensaje(this.invitacionesUsuario)
       this._servicio.cambiarMensaje2(this.fiestaUsuario)
 
-      this.setLogguedIn(true);
+      this.setLogguedIn(estado);
       this.router.navigate(['home']);
     } else {
       alert('Credenciales no validas')
