@@ -3,14 +3,28 @@
     <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
     <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
     <p id="profile-name" class="profile-name-card"></p>
-    <form class="form-signin" id="formCabecera" #cabecera="ngForm" (submit)="ingresoUsuario($event, cabecera)">
-      <span id="reauth-email" class="reauth-email"></span>
-      <input type="email" id="correo" class="form-control" placeholder="Correo Electrónico" required autofocus (ngModel)="correo1" name="correo">
-      <input type="password" id="password" class="form-control" placeholder="Contraseña" required (ngModel)="password1" name="password">
-      <div id="remember" class="checkbox">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input placeholder="Correo Electrónico" type="email" [email]="true" formControlName="correo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" />
+        <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+          <div *ngIf="loginForm.get('correo').hasError('email')">Correo invalido</div>
+          <div *ngIf="f.correo.errors.required">Username is required</div>
+        </div>
       </div>
-      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-      <a [routerLink]="['/registro']">¿Aún no te has registrado? Registrate</a>
-    </form><!-- /form -->
+      <div class="form-group">
+
+        <input placeholder="Contraseña" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+      <div class="form-group" style="text-align: center">
+        <button class="btn btn-success btn-lg btn-block" type="submit">INGRESO</button>
+        <hr class="my-4">
+        <a [routerLink]="['/registro']">¿Aún no te has registrado? Registrate</a>
+      </div>
+    </form>
+
   </div><!-- /card-container -->
 </div><!-- /container -->
