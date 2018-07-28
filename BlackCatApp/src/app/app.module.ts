@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
 import {RUTAS_APP} from "./app.routes";
 import {RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule }    from '@angular/forms';
+
 import { AppComponent } from './app.component';
+
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {AuthGuard} from "./guards/auth.guard";
@@ -49,7 +52,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
       RUTAS_APP, {useHash: false}
 
     ),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ServicioAlcoholimetroService,AuthGuard,AuthService],
   bootstrap: [AppComponent]

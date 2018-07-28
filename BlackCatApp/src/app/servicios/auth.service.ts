@@ -79,7 +79,7 @@ export class AuthService {
       //this._servicio.cambiarMensaje(this.invitacionesUsuario)
       //this._servicio.cambiarMensaje2(this.fiestaUsuario)
 
-      this.setLogguedIn(true);
+      this.setLogguedIn(estado);
       this.router.navigate(['home']);
     } else {
       alert('Credenciales no validas')

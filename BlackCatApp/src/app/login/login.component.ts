@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
-import {Router} from "@angular/router";
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+
 import {AuthService} from "../servicios/auth.service";
 import {HttpClient} from "@angular/common/http";
 
@@ -11,6 +13,11 @@ import {HttpClient} from "@angular/common/http";
 })
 export class LoginComponent implements OnInit {
 
+  loginForm: FormGroup;
+  loading = false;
+  submitted = false;
+  returnUrl: string;
+
   correo1: string;
   password1: string;
   estado: boolean;
@@ -19,14 +26,20 @@ export class LoginComponent implements OnInit {
   usuarioCorrecto = []
 
 
-  constructor(private http: HttpClient,private _auth: AuthService, private router:Router, private _servicio: ServicioAlcoholimetroService) {
+  constructor(private http: HttpClient,private _auth: AuthService, private router:Router,private formBuilder: FormBuilder,
+              private route: ActivatedRoute,) {
     this.estado = false;
 
   }
 
   ngOnInit() {
-
+    this.loginForm = this.formBuilder.group({
+      correo: ['',  Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.required]
+    });
   }
+
+  get f() { return this.loginForm.controls; }
 
   ingresoUsuario(event, formData) {
     //console.log(event);
@@ -37,30 +50,11 @@ export class LoginComponent implements OnInit {
     const correo = target.querySelector('#correo').value
     const password = target.querySelector('#password').value
 
-
-    this._auth.consultarUsuario(correo,password);
-
-    //console.log(this.estado)
-    //this.ingreso(this.estado);
-
     this._auth.consultarUsuario(correo, password);
-    //console.log(this._auth.getEstado)
-    this.ingreso(this._auth.getEstado);
-
-    //this.estado=this._auth.getEstado;
-    //console.log('form',this._servicioAlcoholimetro.getUsuario);
-
-    //console.log(this._servicioAlcoholimetro.getUsuario);
-    /*if(this.estado==true){
-      this._auth.setLogguedIn(true);
-      this.router.navigate(['home']);
-    }else{
-      alert('Credenciales no validas')
-    }*/
-
 
   }
 
+<<<<<<< HEAD
   ingreso(estado: boolean) {
     if (estado == true) {
 
@@ -72,15 +66,22 @@ export class LoginComponent implements OnInit {
       //console.log('invis login:', this.invitacionesUsuario)
       //this._servicio.cambiarMensaje(this.invitacionesUsuario)
       //this._servicio.cambiarMensaje2(this.fiestaUsuario)
+=======
+  onSubmit() {
+    this.submitted = true;
 
-
-      this._auth.setLogguedIn(true);
-      this.router.navigate(['home']);
-    } else {
-      alert('Credenciales no validas')
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
     }
+>>>>>>> 1ae8dc670bd46ed1c3035ee0cc1576d1ebe11747
 
+    this._auth.consultarUsuario(this.loginForm.value.correo, this.loginForm.value.password);
+
+
+    //this.loading = true;
 
   }
+
 
 }
