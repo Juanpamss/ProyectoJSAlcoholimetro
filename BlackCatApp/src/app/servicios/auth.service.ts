@@ -32,6 +32,12 @@ export class AuthService {
     return this.estado;
   }
 
+  get getUsuario(){
+
+    return this.usuarioExistente;
+
+  }
+
   public consultarUsuario(correo: string, password: string) {
 
     this._http.get('http://localhost:1337/usuario?correo=' + correo + '&password=' + password)
@@ -44,6 +50,11 @@ export class AuthService {
 
           } else {
             this.usuarioExistente = data[0];
+
+            //console.log('existente AHORA: ',this.getUsuario)
+
+            this._servicio.cambiarMensaje3(this.getUsuario)
+
             this.estado = true;
             this.ingreso(this.estado)
 
@@ -60,11 +71,13 @@ export class AuthService {
   ingreso(estado: boolean) {
     if (estado == true) {
 
-      this.invitacionesUsuario = this._servicio.consultarInvitaciones()
-      this.fiestaUsuario = this._servicio.consultarFiesta()
-      console.log('invis login:', this.invitacionesUsuario)
-      this._servicio.cambiarMensaje(this.invitacionesUsuario)
-      this._servicio.cambiarMensaje2(this.fiestaUsuario)
+      //this.invitacionesUsuario = this._servicio.consultarInvitaciones()
+      //this.fiestaUsuario = this._servicio.consultarFiesta()
+      //console.log('invis login:', this.invitacionesUsuario)
+
+
+      //this._servicio.cambiarMensaje(this.invitacionesUsuario)
+      //this._servicio.cambiarMensaje2(this.fiestaUsuario)
 
       this.setLogguedIn(estado);
       this.router.navigate(['home']);
