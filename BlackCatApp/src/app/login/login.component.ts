@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   estado: boolean;
   fiestaUsuario: any = []
   invitacionesUsuario: any = []
+  usuarioCorrecto = []
 
 
   constructor(private http: HttpClient,private _auth: AuthService, private router:Router, private _servicio: ServicioAlcoholimetroService) {
@@ -63,12 +64,14 @@ export class LoginComponent implements OnInit {
   ingreso(estado: boolean) {
     if (estado == true) {
 
-      this.invitacionesUsuario = this._servicio.consultarInvitaciones()
-      this.fiestaUsuario = this._servicio.consultarFiesta()
+      this._servicio.cambiarMensaje3(this._auth.getUsuario)
 
-      console.log('invis login:', this.invitacionesUsuario)
-      this._servicio.cambiarMensaje(this.invitacionesUsuario)
-      this._servicio.cambiarMensaje2(this.fiestaUsuario)
+      //this.invitacionesUsuario = this._servicio.consultarInvitaciones()
+      //this.fiestaUsuario = this._servicio.consultarFiesta()
+
+      //console.log('invis login:', this.invitacionesUsuario)
+      //this._servicio.cambiarMensaje(this.invitacionesUsuario)
+      //this._servicio.cambiarMensaje2(this.fiestaUsuario)
 
 
       this._auth.setLogguedIn(true);

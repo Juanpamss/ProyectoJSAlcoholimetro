@@ -11,18 +11,22 @@ export class NotificacionComponent implements OnInit {
   @Input() arregloNotificacion : any = []
   @Input() arregloFiesta : any = []
 
+  auxiliar: any = []
+
   buscar : string
 
   fiesta: any = []
+
+
 
   constructor(private _servicio: ServicioAlcoholimetroService) { }
 
   ngOnInit() {
 
-    this._servicio.mensajeActual.subscribe(mensaje => this.arregloNotificacion = mensaje)
+    //console.log('notifi:', this.arregloNotificacion)
+    //console.log('fiesta:', this.arregloFiesta)
 
-    console.log('notifi:', this.arregloNotificacion)
-    console.log('fiesta:', this.arregloFiesta)
+    //this.crearlo()
 
   }
 
@@ -37,6 +41,25 @@ export class NotificacionComponent implements OnInit {
     this.arregloNotificacion.splice(indice,1)
 
     this._servicio.cambiarMensaje(this.arregloNotificacion)
+
+  }
+
+  crearlo(){
+
+    console.log('tamaño:', this.arregloNotificacion)
+
+    for(let i=0; i < this.arregloNotificacion.length; i++){
+
+      this.auxiliar.push(
+        {
+          'imagenLugar': this.arregloFiesta[i].fiestaIdFK.imagenLugar,
+          'nombre': this.arregloFiesta[i].fiestaIdFK.nombre,
+          'fechaFiesta': this.arregloFiesta[i].fechaFiesta,
+          'horaInicio': this.arregloFiesta[i].horaInicio
+        })
+    }
+
+    console.log('MIO: ', console.log(this.auxiliar))
 
   }
 

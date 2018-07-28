@@ -12,16 +12,28 @@ export class ServicioAlcoholimetroService {
   private estado;
   private invitaciones : any = []
 
+  idFiesta : any = []
+  lugarFiesta: any = []
+
 
   private fuenteMensaje = new BehaviorSubject<any>([]);
   mensajeActual = this.fuenteMensaje.asObservable();
   private fuenteMensaje2 = new BehaviorSubject<any>([]);
   mensajeActual2 = this.fuenteMensaje2.asObservable();
 
+  private fuenteMensaje3 = new BehaviorSubject<any>([]);
+  mensajeActual3 = this.fuenteMensaje3.asObservable();
+
 
 
   constructor(private httpClient: HttpClient) {
     this.usuarioExistente=[];
+  }
+
+  get getInvitaciones(){
+
+    return this.invitaciones
+
   }
 
 
@@ -34,6 +46,12 @@ export class ServicioAlcoholimetroService {
   cambiarMensaje2(mensaje){
 
     this.fuenteMensaje2.next(mensaje)
+
+  }
+
+  cambiarMensaje3(mensaje){
+
+    this.fuenteMensaje3.next(mensaje)
 
   }
 
@@ -67,40 +85,46 @@ export class ServicioAlcoholimetroService {
 
     }).subscribe(
       res => {
-        console.log(res);
+        //console.log(res);
       }
     );
 
 
   }
 
-  consultarInvitaciones(): any[]{
+  consultarInvitaciones(idUsuario){
 
-    this.httpClient.get('http://localhost:1337/invitacion?usuarioIdFK=1')
+    this.httpClient.get(`http://localhost:1337/invitacion?usuarioIdFK=${idUsuario}`)
       .subscribe(
         (data:any[]) => {
 
           this.invitaciones = data
 
-          this.cambiarMensaje(this.invitaciones)
-          this.consultarFiesta()
+          for(let i=0; i<data.length;i++){
+
+            this.idFiesta[i] = this.invitaciones[i].fiestaIdFK
+
+            this.consultarFiesta(this.idFiesta[i].fiestaIdFK)
+
+          }
+
+          //this.cambiarMensaje(this.invitaciones)
+          //this.consultarFiesta()
 
         }
       )
 
-      return this.invitaciones
-
   }
 
-  consultarFiesta(): any[]{
+  consultarFiesta(idFiesta): any[]{
 
-    this.httpClient.get('http://localhost:1337/fiesta/2')
+    this.httpClient.get(`http://localhost:1337/fiesta/${idFiesta}`)
       .subscribe(
         (data:any[]) => {
 
-           this.fiesta = data
+           this.lugarFiesta.push(data)
 
-          this.cambiarMensaje2(this.fiesta)
+          //this.cambiarMensaje2(this.fiesta)
 
         }
       )
@@ -109,7 +133,18 @@ export class ServicioAlcoholimetroService {
 
   }
 
+  consultaInfoUsuario(idUsuario){
 
+    this.consultarInvitaciones(idUsuario)
+
+    return this.idFiesta
+
+  }
+
+  retornarLugarFiestas(){
+
+    return this.lugarFiesta
+  }
 
 
 }
