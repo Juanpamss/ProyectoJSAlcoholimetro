@@ -15,6 +15,8 @@ export class ServicioAlcoholimetroService {
 
   private fuenteMensaje = new BehaviorSubject<any>([]);
   mensajeActual = this.fuenteMensaje.asObservable();
+
+
   private fuenteMensaje2 = new BehaviorSubject<any>([]);
   mensajeActual2 = this.fuenteMensaje2.asObservable();
 

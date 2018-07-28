@@ -8,13 +8,13 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 })
 export class NavegadorSecundarioComponent implements OnInit {
 
-  notificaciones : any = []
+  notificaciones : number
 
   constructor(private _servicio: ServicioAlcoholimetroService) { }
 
   ngOnInit() {
 
-    this._servicio.mensajeActual.subscribe(mensaje => this.notificaciones = mensaje)
+    this._servicio.mensajeActual2.subscribe(mensaje => this.notificaciones = mensaje)
 
   }
 

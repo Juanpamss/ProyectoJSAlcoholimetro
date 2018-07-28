@@ -24,6 +24,8 @@ export class NotificacionComponent implements OnInit {
     console.log('notifi:', this.arregloNotificacion)
     console.log('fiesta:', this.arregloFiesta)
 
+    this._servicio.cambiarMensaje2(this.arregloNotificacion.length)
+
   }
 
   onNameKeyUp(event:any){
