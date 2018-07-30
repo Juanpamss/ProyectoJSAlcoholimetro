@@ -12,18 +12,21 @@
     <ul class="nav justify-content-end">
       <li class="nav-item">
         <button [routerLink]="['/home']" type="button" class="btn btn-default btn-lg">
-          <span class="glyphicon glyphicon-user"></span> User
+          <span class="fa fa-glass" style="font-size:18px;color:#93C54B"></span> Home
         </button>
       </li>
       <li class="nav-item">
         <button [routerLink]="['/home']" type="button" class="btn btn-default btn-lg">
-          <span class="glyphicon glyphicon-user"></span> User
+          <span class="fa fa-user" style="font-size:18px;color:#93C54B; width: 0px"></span>
         </button>
       </li>
-      <li class="nav-item">
-        <button [routerLink]="['/home']" type="button" class="btn btn-default btn-lg">
-          <span class="glyphicon glyphicon-user"></span> User
-        </button>
+      <li class="nav-item dropdown" style="margin-left: -15px">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{usuario.nombre}}</a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">Administrar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Salir</a>
+        </div>
       </li>
     </ul>
   </div>

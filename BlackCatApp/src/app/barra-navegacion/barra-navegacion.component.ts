@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarraNavegacionComponent implements OnInit {
 
-  constructor() { }
+  usuario : any = []
+
+  constructor(private _servicio: ServicioAlcoholimetroService) { }
 
   ngOnInit() {
+
+    this._servicio.mensajeActual3.subscribe(mensaje => this.usuario = mensaje)
+
   }
 
 }
