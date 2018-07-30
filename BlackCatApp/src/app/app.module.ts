@@ -24,6 +24,17 @@ import { NavegadorSecundarioComponent } from './navegador-secundario/navegador-s
 import { AdminFiestaComponent } from './admin-fiesta/admin-fiesta.component';
 import { NuevaFiestaComponent } from './nueva-fiesta/nueva-fiesta.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TestComponent } from './test/test.component';
+import { ChartComponent } from './chart/chart.component';
+
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+
+import {ButtonModule} from 'primeng/button';
+
+import {ChartModule} from 'primeng/chart';
+
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -40,12 +51,18 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NavegadorSecundarioComponent,
     AdminFiestaComponent,
     NuevaFiestaComponent,
+    TestComponent,
+    ChartComponent,
 
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    ChartModule,
+    BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(
 
@@ -53,6 +70,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
     ),
     FormsModule,
+    AccordionModule,
+
     ReactiveFormsModule
   ],
   providers: [ServicioAlcoholimetroService,AuthGuard,AuthService],

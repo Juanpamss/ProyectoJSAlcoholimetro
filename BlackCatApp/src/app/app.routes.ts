@@ -6,6 +6,7 @@ import {AuthGuard} from "./guards/auth.guard";
 import {PortalComponent} from "./portal/portal.component";
 import {AdminFiestaComponent} from "./admin-fiesta/admin-fiesta.component";
 import {NuevaFiestaComponent} from "./nueva-fiesta/nueva-fiesta.component";
+import {TestComponent} from "./test/test.component";
 
 
 export const RUTAS_APP: Routes = [
@@ -36,6 +37,10 @@ export const RUTAS_APP: Routes = [
   {
     path: 'nuevaFiesta',
     component: NuevaFiestaComponent
+  },
+  {
+    path: 'test',
+    component: TestComponent
   },
 
   {
