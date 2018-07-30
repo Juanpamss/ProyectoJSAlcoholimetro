@@ -2,23 +2,35 @@
 <app-navegador-secundario></app-navegador-secundario>
 <br>
 <br>
-<br>
 <div class="row">
   <div class="col-sm-3"></div>
   <div class="col-sm-6" style="align-content: center">
-    <img src="http://www.stickpng.com/assets/images/580b585b2edbce24c47b28d6.png" alt="" width="900" height="300">
+    <img src="http://www.powerpac.org/wp-content/uploads/2017/07/checklist.png" alt="" width="150" height="150" style="margin-left: 260px">
+    <br>
+    <br>
   </div>
   <div class="col-sm-3"></div>
 </div>
 <div class="row">
   <div class="col-sm-3"></div>
   <div class="col-sm-6">
-    <h3><strong>Lugar:</strong></h3><input type="text" class="form-control" id="inputLugar">
+    <h3><strong>Lugar:</strong></h3>
+    <div class="dropdown">
+      <button id="botonLugar" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" value="1">Lugar
+      </button>
+      <div class="dropdown-menu">
+        <div *ngFor="let info of lugaresFiesta">
+          <a class="dropdown-item" id="local" (click)="cambiarTexto(info.nombre, info.id)">{{info.nombre}}</a>
+        </div>
+      </div>
+    </div>
+    <!--
+        <input type="text" (keyup)="textoLugar($event)" class="form-control" id="inputLugar">-->
     <br>
     <h3><strong>Fecha:</strong></h3><form class="form-inline">
     <div class="form-group">
       <div class="input-group">
-        <input class="form-control" placeholder="yyyy-mm-dd"
+        <input id="fecha" class="form-control" placeholder="yyyy-mm-dd"
                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
@@ -28,31 +40,52 @@
       </div>
     </div>
   </form>
-
-    <hr/>
-    <pre>Model: {{ model | json }}</pre>
     <br>
-    <h3><strong>Hora inicio:</strong></h3><input type="text" class="form-control" id="inputHoraIni">
+    <h3><strong>Hora inicio:</strong></h3>
+    <input type="text" class="form-control" id="inputHoraIni" (keyup)="textoHoraInicio($event)">
     <br>
-    <h3><strong>Hora fin:</strong></h3><input type="text" class="form-control" id="inputHoraFin">
+    <h3><strong>Hora fin:</strong></h3>
+    <input type="text" class="form-control" id="inputHoraFin" (keyup)="textoHoraFin($event)">
     <br>
     <div class="row">
+   <!--   <div class="button-group" *ngFor="let info of invitados; let indice = index">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
+          <li><a class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
+          <li><a class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
+          <li><a class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+          <li><a class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
+          <li><a class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
+        </ul>
+      </div>-->
+
       <div class="col-sm-6"><h3><strong>Invitados:</strong></h3></div>
-      <div class="col-sm-6" align="left"><div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button class="dropdown-item">Invitado 1</button>
-          <button class="dropdown-item">Invitado 2</button>
-          <button class="dropdown-item">Invitado 3</button>
-        </div></div>
-    </div>
+      <div class="col-sm-6" align="left">
+        <div class="button-group">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span> Seleccione los invitados</button>
+          <ul class="dropdown-menu">
+            <div *ngFor="let info of invitados; let indice = index">
+              <form >
+                <input type="checkbox" style="margin-left: 10px" name="coffee" value={{info.id}}>&nbsp;{{info.nombre}}<br>
+              </form>
+            </div>
+          </ul>
+
+          <input type="button" (click)="listaInvitados('coffee')" value="Send order">
+        </div>
+
+      </div>
     <br>
     <br><br>
-    <button type="button" class="btn btn-default btn-sm" style="margin-left: 10px" routerLink="/nuevaFiesta"> Crear Fiesta
+    <button type="button" class="btn btn-default btn-sm" style="margin-left: 10px" [routerLink]="['/nuevaFiesta']" (click)="crearFiesta('coffee')"> Crear Fiesta
       <span class="glyphicon glyphicon-search"></span>
     </button>
   </div>
   <div class="col-sm-3"></div>
 </div>
+</div>
+
+
 
 

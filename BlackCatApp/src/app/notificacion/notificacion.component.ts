@@ -18,7 +18,6 @@ export class NotificacionComponent implements OnInit {
   fiesta: any = []
 
 
-
   constructor(private _servicio: ServicioAlcoholimetroService) { }
 
   ngOnInit() {

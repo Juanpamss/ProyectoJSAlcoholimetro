@@ -26,6 +26,11 @@ module.exports = {
 
     fiestaIdFK:{
       model: 'Lugar',
+    },
+
+    usuarioIdFK: {
+
+      model: 'Usuario'
     }
 
   },

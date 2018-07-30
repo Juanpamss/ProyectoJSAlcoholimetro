@@ -42,6 +42,11 @@ module.exports = {
     pedidos: {
       collection: 'Pedido',
       via: 'usuarioIdFK'
+    },
+
+    fiestas: {
+      collection: 'Fiesta',
+      via: 'usuarioIdFK'
     }
 
   },

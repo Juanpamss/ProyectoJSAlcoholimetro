@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   usuarioCorrecto = []
 
 
-  constructor(private http: HttpClient,private _auth: AuthService, private router:Router,private formBuilder: FormBuilder,
+  constructor(private http: HttpClient, private _auth: AuthService, private router: Router, private formBuilder: FormBuilder,
               private route: ActivatedRoute,) {
     this.estado = false;
 
@@ -34,12 +34,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      correo: ['',  Validators.compose([Validators.required, Validators.email])],
+      correo: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.required]
     });
   }
 
-  get f() { return this.loginForm.controls; }
+  get f() {
+    return this.loginForm.controls;
+  }
 
   ingresoUsuario(event, formData) {
     //console.log(event);
@@ -54,11 +56,11 @@ export class LoginComponent implements OnInit {
 
   }
 
-<<<<<<< HEAD
+
   ingreso(estado: boolean) {
     if (estado == true) {
 
-      this._servicio.cambiarMensaje3(this._auth.getUsuario)
+      //this._servicio.cambiarMensaje3(this._auth.getUsuario)
 
       //this.invitacionesUsuario = this._servicio.consultarInvitaciones()
       //this.fiestaUsuario = this._servicio.consultarFiesta()
@@ -66,22 +68,27 @@ export class LoginComponent implements OnInit {
       //console.log('invis login:', this.invitacionesUsuario)
       //this._servicio.cambiarMensaje(this.invitacionesUsuario)
       //this._servicio.cambiarMensaje2(this.fiestaUsuario)
-=======
-  onSubmit() {
-    this.submitted = true;
 
-    // stop here if form is invalid
-    if (this.loginForm.invalid) {
-      return;
+
     }
->>>>>>> 1ae8dc670bd46ed1c3035ee0cc1576d1ebe11747
-
-    this._auth.consultarUsuario(this.loginForm.value.correo, this.loginForm.value.password);
-
-
-    //this.loading = true;
 
   }
 
+
+    onSubmit(){
+      this.submitted = true;
+
+      // stop here if form is invalid
+      if (this.loginForm.invalid) {
+        return;
+      }
+
+
+      this._auth.consultarUsuario(this.loginForm.value.correo, this.loginForm.value.password);
+
+
+      //this.loading = true;
+
+    }
 
 }

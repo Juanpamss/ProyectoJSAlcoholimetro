@@ -3,29 +3,29 @@
 <br>
 <br>
 
-<div class="row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
+<div class="row" style="margin-left: 5px; margin-top: 20px">
+  <div class="col-sm-4">
     <input type="text" placeholder="Fiestas por fecha" name="search">
     <button type="button" class="btn btn-default btn-sm" style="margin-left: 10px" routerLink="/nuevaFiesta"> Crear Nueva
       <span class="glyphicon glyphicon-search"></span>
     </button>
   </div>
-  <div class="col-sm-3"></div>
 </div>
 <br>
 <br>
 
 <div class="row">
   <div class="col-sm-3"></div>
-  <div class="col-sm-6">
+  <div class="col-sm-2" *ngFor="let info of fiestasCreadas; let indice = index">
     <div class="card" style="width: 20rem; height: 30rem">
-      <img class="rounded float-right" src="http://www.ensucumple.com/wp-content/uploads/2016/05/logo-la-bipolar.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title">Lugar: </h4>
-        <p class="card-text">Fecha: </p>
-        <p class="card-text">Hora: </p>
-        <button class="btn btn-primary">Ver</button>
+      <div >
+        <img class="rounded float-right" src="{{info.fiestaIdFK.imagenLugar}}" alt="Card image cap" style="height: 15rem; width: 20rem">
+        <div class="card-body">
+          <h4 class="card-title">Lugar: {{info.fiestaIdFK.nombre}}</h4>
+          <p class="card-text">Fecha: {{info.fechaFiesta}}</p>
+          <p class="card-text">Hora: {{info.horaInicio}}</p>
+          <button class="btn btn-primary">Ver</button>
+        </div>
       </div>
     </div>
   </div>

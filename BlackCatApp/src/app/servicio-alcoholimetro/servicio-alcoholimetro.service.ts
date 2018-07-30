@@ -14,6 +14,9 @@ export class ServicioAlcoholimetroService {
 
   idFiesta : any = []
   lugarFiesta: any = []
+  invitados: any = []
+  lugares: any[]
+  fiestasCreadasUsuario : any = []
 
 
   private fuenteMensaje = new BehaviorSubject<any>([]);
@@ -102,6 +105,10 @@ export class ServicioAlcoholimetroService {
 
           this.invitaciones = data
 
+          this.consultarInvitados()
+
+          this.consultarLugares()
+
           for(let i=0; i<data.length;i++){
 
             this.idFiesta[i] = this.invitaciones[i].fiestaIdFK
@@ -110,30 +117,86 @@ export class ServicioAlcoholimetroService {
 
           }
 
-          //this.cambiarMensaje(this.invitaciones)
-          //this.consultarFiesta()
-
         }
       )
 
   }
 
-  consultarFiesta(idFiesta): any[]{
+  consultarFiesta(idFiesta){
 
     this.httpClient.get(`http://localhost:1337/fiesta/${idFiesta}`)
       .subscribe(
         (data:any[]) => {
 
            this.lugarFiesta.push(data)
+        }
+      )
 
-          //this.cambiarMensaje2(this.fiesta)
+  }
+
+  consultarInvitados(){
+
+    this.httpClient.get('http://localhost:1337/usuario')
+      .subscribe(
+        (data:any[]) => {
+
+          this.invitados = data
+
+          console.log('CONSULTA SERVER:', this.invitados)
 
         }
       )
 
-    return this.fiesta
+  }
+
+  consultarLugares(){
+
+    this.httpClient.get('http://localhost:1337/lugar')
+      .subscribe(
+        (data:any[]) => {
+
+          this.lugares = data
+
+          console.log('CONSULTA SERVER:', this.invitados)
+
+        }
+      )
 
   }
+
+  crearFiesta(idCreador: number, lugar: number, fechaFiesta: string, horaInicio: string, horaFin:string){
+
+    this.httpClient.post(`http://localhost:1337/fiesta`, {
+
+      fechaFiesta : fechaFiesta,
+      horaInicio : horaInicio,
+      horaFin : horaFin,
+      fiestaIdFK : lugar,
+      usuarioIdFK : idCreador
+
+    }).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+  }
+
+  consultarFiestasCreadas(idUsuario){
+
+    this.httpClient.get(`http://localhost:1337/fiesta?usuarioIdFK=${idUsuario}`)
+      .subscribe(
+        (data:any[]) => {
+
+          this.fiestasCreadasUsuario = data
+
+          //console.log('CONSULTA FIESTAS CREADAS:', this.fiestasCreadasUsuario)
+
+        }
+      )
+
+
+  }
+
 
   consultaInfoUsuario(idUsuario){
 
@@ -143,11 +206,45 @@ export class ServicioAlcoholimetroService {
 
   }
 
+  enviarInvitacion(lugar:number, invitado:number){
+
+    this.httpClient.post(`http://localhost:1337/invitacion`, {
+
+      fiestaIdFK : lugar,
+      usuarioIdFK : invitado,
+
+    }).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+
+  }
+
   retornarLugarFiestas(){
 
     return this.lugarFiesta
   }
 
+  retornarInvitados(){
+
+    return this.invitados
+
+  }
+
+  retornarLugares(){
+
+    return this.lugares
+
+  }
+
+  retornarFiestasCreadas(idUsuario){
+
+    this.consultarFiestasCreadas(idUsuario)
+
+    return this.fiestasCreadasUsuario
+
+  }
 
 }
 
