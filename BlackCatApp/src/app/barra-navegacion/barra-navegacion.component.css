@@ -9,3 +9,17 @@
 
   color: white;
 }
+
+.dropdown-item{
+
+  background-color: white;
+  color: black;
+  text-align: right;
+
+}
+
+.dropdown-item:hover{
+
+  background-color: #F8F5F0;
+
+}

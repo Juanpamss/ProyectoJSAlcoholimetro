@@ -32,15 +32,18 @@ export const RUTAS_APP: Routes = [
   },
   {
     path: 'adminFiesta',
-    component: AdminFiestaComponent
+    component: AdminFiestaComponent,
+    //canActivate: [AuthGuard]
   },
   {
     path: 'nuevaFiesta',
-    component: NuevaFiestaComponent
+    component: NuevaFiestaComponent,
+    //canActivate: [AuthGuard]
   },
   {
     path: 'test',
-    component: TestComponent
+    component: TestComponent,
+    //canActivate: [AuthGuard]
   },
 
   {

@@ -18,13 +18,16 @@ export class HomeComponent implements OnInit {
 
   fiestasCreadas : any []
 
+  numNotificaciones : number
+
+
   constructor(private _servicio: ServicioAlcoholimetroService) {
 
   }
 
   ngOnInit() {
 
-    this._servicio.mensajeActual3.subscribe(mensaje => this.usuario = mensaje)
+    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
     console.log('usuario ingresado YA EN HOME: ', this.usuario)
 

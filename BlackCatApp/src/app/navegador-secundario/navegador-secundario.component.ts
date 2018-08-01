@@ -14,7 +14,7 @@ export class NavegadorSecundarioComponent implements OnInit {
 
   ngOnInit() {
 
-    this._servicio.mensajeActual2.subscribe(mensaje => this.notificaciones = mensaje)
+    this._servicio.numNotificaciones.subscribe(mensaje => this.notificaciones = mensaje)
 
   }
 

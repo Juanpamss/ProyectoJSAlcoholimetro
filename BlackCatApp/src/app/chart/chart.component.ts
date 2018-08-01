@@ -11,7 +11,7 @@ export class ChartComponent implements OnInit {
 
   constructor() {
     this.data = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
       datasets: [
         {
           label: 'My First dataset',
@@ -23,6 +23,12 @@ export class ChartComponent implements OnInit {
           label: 'My Second dataset',
           backgroundColor: '#9CCC65',
           borderColor: '#7CB342',
+          data: [28, 48, 40, 19, 86, 27, 90]
+        },
+        {
+          label: 'My Third dataset',
+          backgroundColor: '#cc4e75',
+          borderColor: '#b33546',
           data: [28, 48, 40, 19, 86, 27, 90]
         }
       ]

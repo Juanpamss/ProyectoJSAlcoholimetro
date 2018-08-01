@@ -14,7 +14,7 @@ export class BarraNavegacionComponent implements OnInit {
 
   ngOnInit() {
 
-    this._servicio.mensajeActual3.subscribe(mensaje => this.usuario = mensaje)
+    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
   }
 

@@ -20,14 +20,14 @@ export class ServicioAlcoholimetroService {
 
 
   private fuenteMensaje = new BehaviorSubject<any>([]);
-  mensajeActual = this.fuenteMensaje.asObservable();
+  numNotificaciones = this.fuenteMensaje.asObservable();
 
 
   private fuenteMensaje2 = new BehaviorSubject<any>([]);
   mensajeActual2 = this.fuenteMensaje2.asObservable();
 
   private fuenteMensaje3 = new BehaviorSubject<any>([]);
-  mensajeActual3 = this.fuenteMensaje3.asObservable();
+  usuarioLogeado = this.fuenteMensaje3.asObservable();
 
 
 
@@ -116,6 +116,8 @@ export class ServicioAlcoholimetroService {
             this.consultarFiesta(this.idFiesta[i].fiestaIdFK)
 
           }
+
+          this.cambiarMensaje(this.invitaciones.length)
 
         }
       )
