@@ -8,6 +8,7 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 })
 export class NotificacionComponent implements OnInit {
 
+
   @Input() arregloNotificacion : any = []
   @Input() arregloFiesta : any = []
 

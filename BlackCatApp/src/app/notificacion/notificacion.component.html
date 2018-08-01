@@ -7,6 +7,22 @@
     <button type="button" class="btn btn-default btn-sm" style="margin-left: 10px">
       <span class="glyphicon glyphicon-search">Buscar</span>
     </button>
+    <br>
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp"  ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+              <span class="fa fa-calendar" style="font-size:18px;color:#93C54B"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <hr/>
   </div>
 
   <div class="col-sm-12">
