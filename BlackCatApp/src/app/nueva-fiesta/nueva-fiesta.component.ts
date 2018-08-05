@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 import {Alert} from "selenium-webdriver";
 
@@ -10,16 +10,31 @@ import {Alert} from "selenium-webdriver";
 export class NuevaFiestaComponent implements OnInit {
   model;
 
-  invitados : any = []
+  invitados: any = []
 
   usuario: any = []
+
+  bebidas: any = []
 
   lugar: number
   fecha: string
   horaInicioT: string
   horaFin: string
-  usuariosInvitados : any =[]
+  usuariosInvitados: any = []
   lugaresFiesta: any []
+  bebidasSeleccionadas: any = []
+  cantidadBotellas: any = []
+
+  cantidad = [
+
+    {cant: 1},
+    {cant: 2},
+    {cant: 3},
+    {cant: 4},
+    {cant: 5},
+    {cant: 6}
+
+  ]
 
   pruebas = [
 
@@ -31,7 +46,19 @@ export class NuevaFiestaComponent implements OnInit {
 
   ]
 
-  constructor(private _servicio: ServicioAlcoholimetroService) { }
+  pruebasBote = [
+
+    {descripcion: 'Juan', id: 1},
+    {descripcion: 'Pablo', id: 2},
+    {descripcion: 'Lauren', id: 3},
+    {descripcion: 'Diego', id: 4},
+    {descripcion: 'Maria', id: 5}
+
+  ]
+
+
+  constructor(private _servicio: ServicioAlcoholimetroService) {
+  }
 
   ngOnInit() {
 
@@ -41,58 +68,92 @@ export class NuevaFiestaComponent implements OnInit {
 
   }
 
-  textoLugar(event:any){
+  textoLugar(event: any) {
 
     this.lugar = event.target.value;
 
   }
 
-  textoFecha(event:any){
+  textoFecha(event: any) {
 
     this.fecha = event.target.value;
 
   }
 
-  textoHoraInicio(event:any){
+  textoHoraInicio(event: any) {
 
     this.horaInicioT = event.target.value;
 
   }
 
-  textoHoraFin(event:any){
+  textoHoraFin(event: any) {
 
     this.horaFin = event.target.value;
 
   }
 
 
-  consultarInvitados(){
+  consultarInvitados() {
 
     this.invitados = this._servicio.retornarInvitados()
     this.lugaresFiesta = this._servicio.retornarLugares()
-
-    console.log('YA EN FIESTA:', this.invitados)
+    this.bebidas = this._servicio.retornarBebidas()
 
   }
 
 
   listaInvitados(checkboxName) {
 
-      var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
-      Array.prototype.forEach.call(checkboxes, function(el) {
-        values.push(el.value);
-      });
+    var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+    Array.prototype.forEach.call(checkboxes, function (el) {
+      values.push(el.value);
+    });
 
-      //alert(values);
-      this.usuariosInvitados = values
-      //console.log('invitados', this.usuariosInvitados[0])
+    this.usuariosInvitados = values
+
+    //this.imprimir()
 
 
-    /*console.log('lugar', this.lugar)
-    console.log('fecha', this.fecha)
-    console.log('ini', this.horaInicioT)
-    console.log('fin', this.horaFin)
-      console.log('invitados', this.usuariosInvitados)*/
+  }
+
+  listaBebidas(checkboxName2) {
+
+    var checkboxes2 = document.querySelectorAll('input[name="' + checkboxName2 + '"]:checked'), values = [];
+    Array.prototype.forEach.call(checkboxes2, function (el) {
+      values.push(el.value);
+    });
+
+    this.bebidasSeleccionadas = values
+
+    //this.imprimir()
+
+  }
+
+  listaCantidad(checkboxName3) {
+
+    var checkboxes3 = document.querySelectorAll('input[name="' + checkboxName3 + '"]:checked'), values = [];
+    Array.prototype.forEach.call(checkboxes3, function (el) {
+      values.push(el.value);
+    });
+
+    this.cantidadBotellas = values
+
+
+  }
+
+  imprimir(){
+
+    for (let i = 0; i < this.usuariosInvitados.length; i++) {
+
+      console.log(this.usuariosInvitados[i])
+
+    }
+
+    for (let i = 0; i < this.bebidasSeleccionadas.length; i++) {
+
+      console.log(this.bebidasSeleccionadas[i])
+
+    }
 
   }
 
@@ -104,7 +165,7 @@ export class NuevaFiestaComponent implements OnInit {
 
   }*/
 
-  cambiarTexto(textoNuevo, id){
+  cambiarTexto(textoNuevo, id) {
 
     var lugar = <HTMLFormElement>document.getElementById('botonLugar');
     lugar.value = textoNuevo
@@ -114,17 +175,19 @@ export class NuevaFiestaComponent implements OnInit {
 
   }
 
-  obtenerFecha(){
+  obtenerFecha() {
 
     var fecha = <HTMLFormElement>document.getElementById('fecha');
     this.fecha = fecha.value
 
   }
 
-  crearFiesta(checkboxName){
+  crearFiesta(checkboxName, checkboxName2, checkboxName3) {
 
     this.obtenerFecha()
     this.listaInvitados(checkboxName)
+    this.listaBebidas(checkboxName2)
+    this.listaCantidad(checkboxName3)
 
     console.log('usuario', this.usuario.id)
     console.log('lugar', this.lugar)
@@ -132,15 +195,20 @@ export class NuevaFiestaComponent implements OnInit {
     console.log('ini', this.horaInicioT)
     console.log('fin', this.horaFin)
     console.log('invitados', this.usuariosInvitados)
+    console.log('botellas', this.bebidasSeleccionadas)
+    console.log('cantidad', this.cantidadBotellas)
 
-    this._servicio.crearFiesta(this.usuario.id,this.lugar, this.fecha,this.horaInicioT,this.horaFin)
+    this._servicio.crearFiesta(this.usuario.id, this.lugar, this.fecha, this.horaInicioT, this.horaFin)
 
+    for (let i = 0; i < this.usuariosInvitados.length; i++) {
 
-    for(let i=0; i<this.usuariosInvitados.length; i++){
+        this._servicio.enviarInvitacion(this.lugar, this.usuariosInvitados[i])
 
-      //console.log('invitaciones:', this.usuariosInvitados[i] + this.lugar)
+    }
 
-      this._servicio.enviarInvitacion(this.usuariosInvitados[i], this.lugar)
+    for (let i = 0; i < this.bebidasSeleccionadas.length; i++) {
+
+      this._servicio.enviarPedido(this.cantidadBotellas[0], this.usuario.id, this.bebidasSeleccionadas[i])
 
     }
 

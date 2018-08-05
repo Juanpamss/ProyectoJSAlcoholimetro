@@ -20,6 +20,10 @@ export class HomeComponent implements OnInit {
 
   numNotificaciones : number
 
+  bebidas : any []
+
+  final : any []
+
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
 
@@ -29,7 +33,9 @@ export class HomeComponent implements OnInit {
 
     this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
-    console.log('usuario ingresado YA EN HOME: ', this.usuario)
+    //console.log('usuario ingresado YA EN HOME: ', this.usuario)
+
+    this._servicio.auxiliarNotificaciones = []
 
     this.consultarInvitacionesUsuario()
 
@@ -48,14 +54,18 @@ export class HomeComponent implements OnInit {
 
     this.fiestasCreadas = this._servicio.retornarFiestasCreadas(this.id)
 
+    this.bebidas = this._servicio.retornarBebidas()
 
-    this._servicio.cambiarMensaje2(this.notificaciones.length)
+    this.final = this._servicio.retornarAuxililarNotificaciones()
 
-    console.log('POR FA INVIS: ',this.notificaciones)
+
+    //this._servicio.cambiarFiestasCreadas(this.notificaciones.length)
+
+    /*console.log('POR FA INVIS: ',this.notificaciones)
 
     console.log('POR FA LUGARES: ',this.fiestas)
 
-    console.log('POR FA INVITADOS: ',this.invitados)
+    console.log('POR FA INVITADOS: ',this.invitados)*/
 
     //console.log('POR FA CREADAS: ',this.fiestasCreadas)
 

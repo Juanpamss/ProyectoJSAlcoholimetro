@@ -8,63 +8,40 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 })
 export class NotificacionComponent implements OnInit {
 
+  model;
 
-  @Input() arregloNotificacion : any = []
-  @Input() arregloFiesta : any = []
+  @Input() arregloNotificacion: any = []
 
   auxiliar: any = []
 
-  buscar : string
+  buscar: string
 
   fiesta: any = []
 
+  usuario: any = []
 
-  constructor(private _servicio: ServicioAlcoholimetroService) { }
+
+  constructor(private _servicio: ServicioAlcoholimetroService) {
+  }
 
   ngOnInit() {
 
-    //console.log('notifi:', this.arregloNotificacion)
-    //console.log('fiesta:', this.arregloFiesta)
-
-    //this.crearlo()
-
-    this._servicio.cambiarMensaje2(this.arregloNotificacion.length)
+    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
   }
 
-  onNameKeyUp(event:any){
+  onNameKeyUp(event: any) {
 
     this.buscar = event.target.value;
 
   }
 
-  eliminar(indice){
 
-    this.arregloNotificacion.splice(indice,1)
+  eliminar(indice) {
 
-    this._servicio.cambiarMensaje(this.arregloNotificacion)
-
-  }
-
-  crearlo(){
-
-    console.log('tamaño:', this.arregloNotificacion)
-
-    for(let i=0; i < this.arregloNotificacion.length; i++){
-
-      this.auxiliar.push(
-        {
-          'imagenLugar': this.arregloFiesta[i].fiestaIdFK.imagenLugar,
-          'nombre': this.arregloFiesta[i].fiestaIdFK.nombre,
-          'fechaFiesta': this.arregloFiesta[i].fechaFiesta,
-          'horaInicio': this.arregloFiesta[i].horaInicio
-        })
-    }
-
-    console.log('MIO: ', console.log(this.auxiliar))
+    this.arregloNotificacion.splice(indice, 1)
 
   }
-
 
 
 }

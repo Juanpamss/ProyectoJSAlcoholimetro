@@ -3,14 +3,34 @@
 <br>
 <br>
 
-<div class="row" style="margin-left: 5px; margin-top: 20px">
-  <div class="col-sm-12">
-    <input type="text" placeholder="Fiestas por fecha" name="search">
-    <button type="button" class="btn btn-default btn-sm" style="margin-left: 10px" routerLink="/nuevaFiesta"> Crear Nueva
-      <span class="glyphicon glyphicon-search"></span>
-    </button>
-  </div>
+<div class="row" style="margin-left: 20px">
+  <button type="button" [routerLink]="['/nuevaFiesta']" class="btn btn-default btn-sm" style="margin-left: 0px">
+    <span class="glyphicon glyphicon-search">Crear nueva</span>
+  </button>
 </div>
+<br>
+<label style="color: white; margin-left: 20px">Buscar por fecha:</label>
+<div class="row" style="margin-left: 20px">
+
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input id="fechaBuscar" class="form-control" placeholder="yyyy-mm-dd"
+               name="dp"  ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+            <span class="fa fa-calendar" style="font-size:18px;color:#93C54B"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button type="button" (click)="buscarFecha('fechaBuscar')" class="btn btn-default btn-sm" style="margin-left: 0px">
+      <span class="glyphicon glyphicon-search">Buscar</span>
+    </button>
+  </form>
+
+</div>
+
 
 <div class="col-sm-12">
 

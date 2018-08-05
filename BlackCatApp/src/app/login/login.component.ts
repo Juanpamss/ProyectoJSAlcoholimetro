@@ -60,16 +60,6 @@ export class LoginComponent implements OnInit {
   ingreso(estado: boolean) {
     if (estado == true) {
 
-      //this._servicio.cambiarMensaje3(this._auth.getUsuario)
-
-      //this.invitacionesUsuario = this._servicio.consultarInvitaciones()
-      //this.fiestaUsuario = this._servicio.consultarFiesta()
-
-      //console.log('invis login:', this.invitacionesUsuario)
-      //this._servicio.cambiarMensaje(this.invitacionesUsuario)
-      //this._servicio.cambiarMensaje2(this.fiestaUsuario)
-
-
     }
 
   }

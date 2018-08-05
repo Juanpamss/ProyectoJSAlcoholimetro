@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
 
     descripcion: {
-      type: 'number',
+      type: 'string',
       required: true
     },
 

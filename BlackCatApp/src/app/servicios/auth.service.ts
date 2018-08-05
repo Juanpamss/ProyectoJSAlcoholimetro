@@ -53,7 +53,7 @@ export class AuthService {
 
             //console.log('existente AHORA: ',this.getUsuario)
 
-            this._servicio.cambiarMensaje3(this.getUsuario)
+            this._servicio.cambiarUsuarioLog(this.getUsuario)
 
             this.estado = true;
             this.ingreso(this.estado)
@@ -76,8 +76,8 @@ export class AuthService {
       //console.log('invis login:', this.invitacionesUsuario)
 
 
-      //this._servicio.cambiarMensaje(this.invitacionesUsuario)
-      //this._servicio.cambiarMensaje2(this.fiestaUsuario)
+      //this._servicio.cambiarNumNotificaciones(this.invitacionesUsuario)
+      //this._servicio.cambiarFiestasCreadas(this.fiestaUsuario)
 
       this.setLogguedIn(estado);
       this.router.navigate(['home']);

@@ -8,26 +8,33 @@ import {BehaviorSubject} from "rxjs/index";
 export class ServicioAlcoholimetroService {
 
   private usuarioExistente : any = []
-  private fiesta : any = []
   private estado;
   private invitaciones : any = []
 
   idFiesta : any = []
   lugarFiesta: any = []
   invitados: any = []
-  lugares: any[]
+  lugares: any = []
   fiestasCreadasUsuario : any = []
+  bebidas : any = []
+
+  fiestaFechaBusqueda : any = []
+
+  auxiliarNotificaciones : any = []
 
 
-  private fuenteMensaje = new BehaviorSubject<any>([]);
-  numNotificaciones = this.fuenteMensaje.asObservable();
+  private fuenteNotificaciones = new BehaviorSubject<any>([]);
+  numNotificaciones = this.fuenteNotificaciones.asObservable();
 
 
-  private fuenteMensaje2 = new BehaviorSubject<any>([]);
-  mensajeActual2 = this.fuenteMensaje2.asObservable();
+  private fuenteFiestasCreadas = new BehaviorSubject<any>([]);
+  fiestasCreadas = this.fuenteFiestasCreadas.asObservable();
 
-  private fuenteMensaje3 = new BehaviorSubject<any>([]);
-  usuarioLogeado = this.fuenteMensaje3.asObservable();
+  private fuenteUsuarioLog = new BehaviorSubject<any>([]);
+  usuarioLogeado = this.fuenteUsuarioLog.asObservable();
+
+  private fuenteBuscarFiestaCreada = new BehaviorSubject<any>([]);
+  buscarFiestaCreada = this.fuenteBuscarFiestaCreada.asObservable();
 
 
 
@@ -42,21 +49,27 @@ export class ServicioAlcoholimetroService {
   }
 
 
-  cambiarMensaje(mensaje){
+  cambiarNumNotificaciones(mensaje){
 
-    this.fuenteMensaje.next(mensaje)
-
-  }
-
-  cambiarMensaje2(mensaje){
-
-    this.fuenteMensaje2.next(mensaje)
+    this.fuenteNotificaciones.next(mensaje)
 
   }
 
-  cambiarMensaje3(mensaje){
+  cambiarFiestasCreadas(mensaje){
 
-    this.fuenteMensaje3.next(mensaje)
+    this.fuenteFiestasCreadas.next(mensaje)
+
+  }
+
+  cambiarUsuarioLog(mensaje){
+
+    this.fuenteUsuarioLog.next(mensaje)
+
+  }
+
+  cambiarBuscarFiestaCreada(mensaje){
+
+    this.fuenteBuscarFiestaCreada.next(mensaje)
 
   }
 
@@ -109,7 +122,11 @@ export class ServicioAlcoholimetroService {
 
           this.consultarLugares()
 
-          for(let i=0; i<data.length;i++){
+          this.consultarBebidas()
+
+          //this.auxiliarNotificaciones = []
+
+          for(let i=0; i < data.length;i++){
 
             this.idFiesta[i] = this.invitaciones[i].fiestaIdFK
 
@@ -117,8 +134,7 @@ export class ServicioAlcoholimetroService {
 
           }
 
-          this.cambiarMensaje(this.invitaciones.length)
-
+          this.cambiarNumNotificaciones(this.invitaciones.length)
         }
       )
 
@@ -128,9 +144,18 @@ export class ServicioAlcoholimetroService {
 
     this.httpClient.get(`http://localhost:1337/fiesta/${idFiesta}`)
       .subscribe(
-        (data:any[]) => {
+        (data:any = []) => {
 
            this.lugarFiesta.push(data)
+
+          this.auxiliarNotificaciones.push(
+            {
+              'imagenLugar': data.fiestaIdFK.imagenLugar,
+              'nombre': data.fiestaIdFK.nombre,
+              'fechaFiesta': data.fechaFiesta,
+              'horaInicio': data.horaInicio
+            })
+
         }
       )
 
@@ -144,7 +169,7 @@ export class ServicioAlcoholimetroService {
 
           this.invitados = data
 
-          console.log('CONSULTA SERVER:', this.invitados)
+          //console.log('CONSULTA SERVER:', this.invitados)
 
         }
       )
@@ -159,7 +184,7 @@ export class ServicioAlcoholimetroService {
 
           this.lugares = data
 
-          console.log('CONSULTA SERVER:', this.invitados)
+          //console.log('CONSULTA SERVER:', this.invitados)
 
         }
       )
@@ -178,7 +203,7 @@ export class ServicioAlcoholimetroService {
 
     }).subscribe(
       res => {
-        console.log(res);
+        //console.log(res);
       }
     );
   }
@@ -191,14 +216,13 @@ export class ServicioAlcoholimetroService {
 
           this.fiestasCreadasUsuario = data
 
+          this.cambiarFiestasCreadas(this.fiestasCreadasUsuario)
+
           //console.log('CONSULTA FIESTAS CREADAS:', this.fiestasCreadasUsuario)
 
         }
       )
-
-
   }
-
 
   consultaInfoUsuario(idUsuario){
 
@@ -217,15 +241,64 @@ export class ServicioAlcoholimetroService {
 
     }).subscribe(
       res => {
-        console.log(res);
+        //console.log(res);
       }
     );
 
   }
 
+  consultarBebidas(){
+
+    this.httpClient.get(`http://localhost:1337/bebida`)
+      .subscribe(
+        (data:any[]) => {
+
+          this.bebidas = data
+
+          //console.log('CONSULTA FIESTAS CREADAS:', this.fiestasCreadasUsuario)
+
+        }
+      )
+  }
+
+  enviarPedido(cantidad: number, usuario: number, bebida:number){
+
+    this.httpClient.post(`http://localhost:1337/pedido`, {
+
+      cantidad : cantidad,
+      usuarioIdFK : usuario,
+      bebidaIdFK : bebida
+
+    }).subscribe(
+      res => {
+        //console.log(res);
+      }
+    );
+
+  }
+
+
+  buscarPorFecha(usuario: number, fecha: string){
+
+    this.httpClient.get(`http://localhost:1337/fiesta?usuarioIdFK=${usuario}&fechaFiesta=${fecha}`)
+      .subscribe(
+        (data:any[]) => {
+
+          this.fiestaFechaBusqueda = data
+
+          this.cambiarBuscarFiestaCreada(this.fiestaFechaBusqueda)
+
+        }
+
+      )
+  }
+
+
+
   retornarLugarFiestas(){
 
     return this.lugarFiesta
+
   }
 
   retornarInvitados(){
@@ -245,6 +318,26 @@ export class ServicioAlcoholimetroService {
     this.consultarFiestasCreadas(idUsuario)
 
     return this.fiestasCreadasUsuario
+
+  }
+
+  retornarBebidas(){
+
+    return this.bebidas
+
+  }
+
+  retornarBuscarFecha(usuario: number, fecha: string){
+
+    this.buscarPorFecha(usuario, fecha)
+
+    return this.fiestaFechaBusqueda
+
+  }
+
+  retornarAuxililarNotificaciones(){
+
+    return this.auxiliarNotificaciones
 
   }
 
