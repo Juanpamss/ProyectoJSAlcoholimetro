@@ -28,12 +28,8 @@ import { TestComponent } from './test/test.component';
 import { ChartComponent } from './chart/chart.component';
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-
 import {ButtonModule} from 'primeng/button';
-
 import {ChartModule} from 'primeng/chart';
-
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
@@ -52,8 +48,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AdminFiestaComponent,
     NuevaFiestaComponent,
     TestComponent,
-    ChartComponent,
-
+    ChartComponent
 
   ],
   imports: [
@@ -71,7 +66,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ),
     FormsModule,
     AccordionModule,
-
     ReactiveFormsModule
   ],
   providers: [ServicioAlcoholimetroService,AuthGuard,AuthService],

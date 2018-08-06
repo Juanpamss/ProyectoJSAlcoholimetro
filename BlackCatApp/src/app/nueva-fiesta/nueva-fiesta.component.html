@@ -1,5 +1,153 @@
 <app-barra-navegacion></app-barra-navegacion>
 <app-navegador-secundario></app-navegador-secundario>
+
+<div class="row">
+
+  <div class="col-sm-12">
+  </div>
+  <div class="col-sm-12">
+    <div class="">
+      <div class="jumbotron fond-container">
+        <div class="" style="text-align: center">
+          <img src="http://www.powerpac.org/wp-content/uploads/2017/07/checklist.png" alt="" width="150" height="150">
+        </div>
+        <hr class="my-4">
+        <form id="formCrearFiesta" (submit)="crearFiesta('invitados','botellas','cantidad')">
+          <div class="form-group">
+            <div class="dropdown">
+              <button id="botonLugar" type="button" class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown" value="1">
+                Lugar
+              </button>
+              <div class="dropdown-menu">
+                <div *ngFor="let info of lugaresFiesta">
+                  <a class="dropdown-item" id="local" (click)="cambiarTexto(info.nombre, info.id)">{{info.nombre}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Fecha programada: </label>
+            <div class="input-group">
+              <input id="fecha" class="form-control" placeholder="yyyy-mm-dd"
+                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                  <span class="fa fa-calendar" style="font-size:18px;color:#93C54B"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Hora de inicio programada: </label>
+            <!--<input type="text" class="form-control" id="inputHoraIni"
+                   (keyup)="textoHoraInicio($event)">-->
+
+            <ngb-timepicker [formControl]="ctrl" required></ngb-timepicker>
+            <div *ngIf="ctrl.valid" class="small form-text text-success">Buena elección !</div>
+            <div class="small form-text text-danger" *ngIf="!ctrl.valid">
+              <div *ngIf="ctrl.errors['required']">Seleccione una hora</div>
+              <div *ngIf="ctrl.errors['tooLate']">Lo sentimos, es muy tarde</div>
+              <div *ngIf="ctrl.errors['tooEarly']">Lo sentimos, es muy temprano</div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label>Hora fin programada: </label>
+            <!--<input type="text" class="form-control" id="inputHoraFin"
+                   (keyup)="textoHoraFin($event)">-->
+
+            <ngb-timepicker [formControl]="ctrl2" required></ngb-timepicker>
+            <div *ngIf="ctrl2.valid" class="small form-text text-success">Buena elección !</div>
+            <div class="small form-text text-danger" *ngIf="!ctrl2.valid">
+              <div *ngIf="ctrl2.errors['required']">Seleccione una hora</div>
+              <div *ngIf="ctrl2.errors['tooLate']">Lo sentimos, es muy tarde</div>
+              <div *ngIf="ctrl2.errors['tooEarly']">Lo sentimos, es muy temprano</div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label>Invitados: </label>
+            <div class="button-group">
+              <button type="button" class="btn btn-primary btn-sm dropdown-toggle form-control"
+                      data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+                Seleccione los invitados
+              </button>
+              <ul class="dropdown-menu">
+                <div *ngFor="let infoInvi of invitados">
+                  <form>
+                    <input type="checkbox" name="invitados"
+                           value={{infoInvi.id}}>&nbsp;{{infoInvi.nombre}}<br>
+                  </form>
+                </div>
+              </ul>
+              <!--<input type="button" (click)="listaInvitados('coffee')" value="Send order">-->
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Bebidas: </label>
+
+            <div class="button-group">
+              <button type="button" class="btn btn-primary btn-sm dropdown-toggle form-control"
+                      data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+                Seleccione las botellas:
+              </button>
+              <ul class="dropdown-menu">
+                <div *ngFor="let infoBot of bebidas; let indice = index">
+                  <form>
+                    <input type="checkbox" name="botellas"
+                           value={{infoBot.id}}>&nbsp;{{infoBot.descripcion}}<br>
+                  </form>
+                </div>
+              </ul>
+
+              <!--<input type="button" (click)="listaBebidas('botellas')" value="Send order">-->
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label>Cantidad: </label>
+
+            <div class="button-group">
+              <button type="button" class="btn btn-primary btn-sm dropdown-toggle form-control"
+                      data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+                Seleccione la cantidad:
+              </button>
+              <ul class="dropdown-menu">
+                <div *ngFor="let infoCant of cantidad; let indice = index">
+                  <form>
+                    <input type="checkbox" name="cantidad"
+                           value={{infoCant.cant}}>&nbsp;{{infoCant.cant}}<br>
+                  </form>
+                </div>
+              </ul>
+
+              <!--<input type="button" (click)="listaInvitados('invitados')" value="Send order">-->
+            </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-success form-control">Crear fiesta !</button>
+        </form>
+
+
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-12"></div>
+
+</div>
+
+
+
+
+
+
+
+<!--
 <br>
 <br>
 <div class="row">
@@ -26,8 +174,8 @@
         </div>
       </div>
     </div>
-    <!--
-        <input type="text" (keyup)="textoLugar($event)" class="form-control" id="inputLugar">-->
+    &lt;!&ndash;
+        <input type="text" (keyup)="textoLugar($event)" class="form-control" id="inputLugar">&ndash;&gt;
     <br>
     <h3><strong>Fecha:</strong></h3>
     <form class="form-inline">
@@ -59,7 +207,7 @@
 
     </div>
     <div class="row" style="margin-top: 20px">
-      <!--   <div class="button-group" *ngFor="let info of invitados; let indice = index">
+      &lt;!&ndash;   <div class="button-group" *ngFor="let info of invitados; let indice = index">
            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button>
            <ul class="dropdown-menu">
              <li><a class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
@@ -69,7 +217,7 @@
              <li><a class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
              <li><a class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
            </ul>
-         </div>-->
+         </div>&ndash;&gt;
 
       <div class="col-sm-6"><h3><strong>Invitados:</strong></h3></div>
       <div class="col-sm-6" align="left">
@@ -86,7 +234,7 @@
             </form>
           </div>
         </ul>
-        <!--<input type="button" (click)="listaInvitados('coffee')" value="Send order">-->
+        &lt;!&ndash;<input type="button" (click)="listaInvitados('coffee')" value="Send order">&ndash;&gt;
       </div>
     </div>
 
@@ -106,7 +254,7 @@
             </div>
           </ul>
 
-          <!--<input type="button" (click)="listaBebidas('botellas')" value="Send order">-->
+          &lt;!&ndash;<input type="button" (click)="listaBebidas('botellas')" value="Send order">&ndash;&gt;
         </div>
 
       </div>
@@ -141,7 +289,7 @@
     </div>
     <div class="col-sm-3"></div>
   </div>
-</div>
+</div>-->
 
 
 
