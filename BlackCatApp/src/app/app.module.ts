@@ -31,6 +31,7 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 import {ButtonModule} from 'primeng/button';
 import {ChartModule} from 'primeng/chart';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 
@@ -48,7 +49,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AdminFiestaComponent,
     NuevaFiestaComponent,
     TestComponent,
+<<<<<<< HEAD
+    ChartComponent,
+    SearchPipe,
+
+=======
     ChartComponent
+>>>>>>> 681260b00f449d34d9fac98f0ae8c2bfff0f5245
 
   ],
   imports: [
