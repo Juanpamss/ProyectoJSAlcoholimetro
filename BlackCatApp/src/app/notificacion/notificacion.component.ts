@@ -12,7 +12,7 @@ export class NotificacionComponent implements OnInit {
   searchText:string;
 
   @Input() arregloNotificacion: any = []
-
+  //arregloNotificaciones: any = []
   auxiliar: any = []
 
   buscar: string
@@ -25,14 +25,20 @@ export class NotificacionComponent implements OnInit {
 
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
+
   }
 
   ngOnInit() {
 
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
-    this.llenarEquipos();
+    /*this.arregloNotificaciones=[
+      {nombre: 'Luis'},
+        {nombre: 'Juan'},
+      ];*/
+    this.llenar();
     console.log(this.arrayNombres)
     console.log(this.arregloNotificacion)
+    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+
 
   }
 
@@ -49,7 +55,7 @@ export class NotificacionComponent implements OnInit {
 
   }
 
-  llenarEquipos(){
+  llenar(){
     for (var i = 0; i < this.arregloNotificacion.length; i++) {
       this.arrayNombres.push(this.arregloNotificacion[i].nombre);
     }
