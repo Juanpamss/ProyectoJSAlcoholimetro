@@ -13,8 +13,12 @@ export class BarraNavegacionComponent implements OnInit {
 
   constructor(private _servicio: ServicioAlcoholimetroService, private servicio: AuthService) { }
 
+  notificaciones : number
+
   ngOnInit() {
     this.usuario = JSON.parse(localStorage.getItem('currentUser'));
+
+    this._servicio.numNotificaciones.subscribe(mensaje => this.notificaciones = mensaje)
     //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
   }
