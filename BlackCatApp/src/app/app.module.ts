@@ -35,6 +35,7 @@ import {ChartModule} from 'primeng/chart';
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 
@@ -53,6 +54,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     NuevaFiestaComponent,
     TestComponent,
     ChartComponent,
+    SearchPipe,
 
 
   ],
