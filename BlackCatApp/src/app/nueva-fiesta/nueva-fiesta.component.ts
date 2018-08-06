@@ -97,8 +97,8 @@ export class NuevaFiestaComponent implements OnInit {
 
   ngOnInit() {
 
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
-
+    //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
     this.consultarInvitados()
 
     this.quitarUsuario()
@@ -223,14 +223,14 @@ export class NuevaFiestaComponent implements OnInit {
     this.horaInicioF = this.ctrl.value.hour + ':' + this.ctrl.value.minute;
     this.horaFin = this.ctrl2.value.hour + ':' + this.ctrl2.value.minute;
 
-    console.log('usuario', this.usuario.id)
+    /*console.log('usuario', this.usuario.id)
     console.log('lugar', this.lugar)
     console.log('fecha', this.fecha)
     console.log('ini', this.horaInicioF)
     console.log('fin', this.horaFin)
     console.log('invitados', this.usuariosInvitados)
     console.log('botellas', this.bebidasSeleccionadas)
-    console.log('cantidad', this.cantidadBotellas)
+    console.log('cantidad', this.cantidadBotellas)*/
 
     this._servicio.crearFiesta(this.usuario.id, this.lugar, this.fecha, this.horaInicioF, this.horaFin)
 
@@ -247,6 +247,8 @@ export class NuevaFiestaComponent implements OnInit {
     }
 
     this.resetForm()
+
+    this._servicio.cambiarFiestasCreadas(this._servicio.retornarFiestasCreadas(this.usuario.id))
 
   }
 
@@ -309,9 +311,6 @@ export class NuevaFiestaComponent implements OnInit {
       }
 
     }
-
-
-
 
 
   }

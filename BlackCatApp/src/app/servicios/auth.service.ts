@@ -53,8 +53,9 @@ export class AuthService {
 
             //console.log('existente AHORA: ',this.getUsuario)
 
-            this._servicio.cambiarUsuarioLog(this.getUsuario)
 
+            localStorage.setItem('currentUser', JSON.stringify(this.getUsuario));
+            this._servicio.cambiarUsuarioLog(localStorage.getItem('currentUser'));
             this.estado = true;
             this.ingreso(this.estado)
 
@@ -81,8 +82,16 @@ export class AuthService {
 
       this.setLogguedIn(estado);
       this.router.navigate(['home']);
+
     } else {
       alert('Credenciales no validas')
     }
   }
+
+
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
+  }
+
 }

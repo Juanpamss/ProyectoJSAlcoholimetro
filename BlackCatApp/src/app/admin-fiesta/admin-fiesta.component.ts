@@ -19,9 +19,12 @@ export class AdminFiestaComponent implements OnInit {
 
   ngOnInit() {
 
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
 
     this._servicio.buscarFiestaCreada.subscribe(mensaje => this.fiestasCreadas = mensaje)
+
+    this._servicio.fiestasCreadas.subscribe(mensaje => this.fiestasCreadas = mensaje)
 
     this.consultarFiestasCreadas()
 

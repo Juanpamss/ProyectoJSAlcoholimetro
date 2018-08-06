@@ -1,0 +1,23 @@
+<div class="rown">
+  <div class="col-sm-12">
+    <app-barra-navegacion></app-barra-navegacion>
+    <app-navegador-secundario></app-navegador-secundario>
+
+    <div class="card">
+      <img src="http://www.propinio.com/assets/i/icon-user.png" alt="John" style="width:100%">
+      <h1>{{usuario.nombre + ' ' + usuario.apellido}}</h1>
+      <p class="title">{{usuario.correo}}</p>
+      <p>Quito</p>
+      <div style="margin: 24px 0;">
+        <a><i class="fa fa-twitter"></i></a>
+        <a><i class="fa fa-facebook"></i></a>
+      </div>
+      <p><button [routerLink]="['/editarUsuario']">Editar</button></p>
+    </div>
+
+
+  </div>
+
+</div>
+
+

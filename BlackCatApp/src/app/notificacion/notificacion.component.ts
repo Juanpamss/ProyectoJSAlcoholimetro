@@ -12,6 +12,8 @@ export class NotificacionComponent implements OnInit {
   searchText:string;
 
   @Input() arregloNotificacion: any = []
+  @Input() arrayNombres=[];
+
   //arregloNotificaciones: any = []
   auxiliar: any = []
 
@@ -21,7 +23,6 @@ export class NotificacionComponent implements OnInit {
 
   usuario: any = []
 
-  arrayNombres=[];
 
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
@@ -30,14 +31,11 @@ export class NotificacionComponent implements OnInit {
 
   ngOnInit() {
 
-    /*this.arregloNotificaciones=[
-      {nombre: 'Luis'},
-        {nombre: 'Juan'},
-      ];*/
     this.llenar();
     console.log(this.arrayNombres)
     console.log(this.arregloNotificacion)
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
+    //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
 
   }

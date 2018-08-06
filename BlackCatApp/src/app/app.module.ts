@@ -32,6 +32,8 @@ import {ButtonModule} from 'primeng/button';
 import {ChartModule} from 'primeng/chart';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SearchPipe } from './pipes/search.pipe';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { EditarInfoUsuarioComponent } from './editar-info-usuario/editar-info-usuario.component';
 
 
 
@@ -52,6 +54,8 @@ import { SearchPipe } from './pipes/search.pipe';
 
     ChartComponent,
     SearchPipe,
+    UserInfoComponent,
+    EditarInfoUsuarioComponent,
 
 
 

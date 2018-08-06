@@ -7,6 +7,8 @@ import {PortalComponent} from "./portal/portal.component";
 import {AdminFiestaComponent} from "./admin-fiesta/admin-fiesta.component";
 import {NuevaFiestaComponent} from "./nueva-fiesta/nueva-fiesta.component";
 import {TestComponent} from "./test/test.component";
+import {UserInfoComponent} from "./user-info/user-info.component";
+import {EditarInfoUsuarioComponent} from "./editar-info-usuario/editar-info-usuario.component";
 
 
 export const RUTAS_APP: Routes = [
@@ -23,7 +25,7 @@ export const RUTAS_APP: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
 
   {
@@ -45,7 +47,16 @@ export const RUTAS_APP: Routes = [
     component: TestComponent,
     //canActivate: [AuthGuard]
   },
-
+  {
+    path: 'infoUsuario',
+    component: UserInfoComponent,
+    //canActivate: [AuthGuard]
+  },
+  {
+    path: 'editarUsuario',
+    component: EditarInfoUsuarioComponent,
+    //canActivate: [AuthGuard]
+  },
   {
     path: '**',
     pathMatch: 'full',
