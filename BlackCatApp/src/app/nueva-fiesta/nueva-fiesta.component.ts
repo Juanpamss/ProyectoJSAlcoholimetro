@@ -232,17 +232,17 @@ export class NuevaFiestaComponent implements OnInit {
     console.log('botellas', this.bebidasSeleccionadas)
     console.log('cantidad', this.cantidadBotellas)
 
-    //this._servicio.crearFiesta(this.usuario.id, this.lugar, this.fecha, this.horaInicioT, this.horaFin)
+    this._servicio.crearFiesta(this.usuario.id, this.lugar, this.fecha, this.horaInicioF, this.horaFin)
 
     for (let i = 0; i < this.usuariosInvitados.length; i++) {
 
-        //this._servicio.enviarInvitacion(this.lugar, this.usuariosInvitados[i])
+        this._servicio.enviarInvitacion(this.lugar, this.usuariosInvitados[i])
 
     }
 
     for (let i = 0; i < this.bebidasSeleccionadas.length; i++) {
 
-      //this._servicio.enviarPedido(this.cantidadBotellas[0], this.usuario.id, this.bebidasSeleccionadas[i])
+      this._servicio.enviarPedido(this.cantidadBotellas[0], this.usuario.id, this.bebidasSeleccionadas[i])
 
     }
 
