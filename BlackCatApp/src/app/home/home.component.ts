@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
 
   final : any []
 
+  auxNombres : any = []
+
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
 
@@ -36,6 +38,8 @@ export class HomeComponent implements OnInit {
     //console.log('usuario ingresado YA EN HOME: ', this.usuario)
 
     this._servicio.auxiliarNotificaciones = []
+
+    this._servicio.auxiliarNombres = []
 
     this.consultarInvitacionesUsuario()
 
@@ -57,6 +61,8 @@ export class HomeComponent implements OnInit {
     this.bebidas = this._servicio.retornarBebidas()
 
     this.final = this._servicio.retornarAuxililarNotificaciones()
+
+    this.auxNombres = this._servicio.retornarAuxililarNombres()
 
 
     //this._servicio.cambiarFiestasCreadas(this.notificaciones.length)

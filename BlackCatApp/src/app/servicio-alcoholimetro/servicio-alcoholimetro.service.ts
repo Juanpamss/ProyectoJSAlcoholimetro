@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs/index";
+import {stringDistance} from "codelyzer/util/utils";
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,7 @@ export class ServicioAlcoholimetroService {
 
   auxiliarNotificaciones : any = []
 
+  auxiliarNombres : any = []
 
   private fuenteNotificaciones = new BehaviorSubject<any>([]);
   numNotificaciones = this.fuenteNotificaciones.asObservable();
@@ -155,6 +157,10 @@ export class ServicioAlcoholimetroService {
               'fechaFiesta': data.fechaFiesta,
               'horaInicio': data.horaInicio
             })
+
+          this.auxiliarNombres.push({
+            'nombre': data.fiestaIdFK.nombre
+          })
 
         }
       )
@@ -338,6 +344,12 @@ export class ServicioAlcoholimetroService {
   retornarAuxililarNotificaciones(){
 
     return this.auxiliarNotificaciones
+
+  }
+
+  retornarAuxililarNombres(){
+
+    return this.auxiliarNombres
 
   }
 
