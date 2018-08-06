@@ -49,13 +49,11 @@ import { SearchPipe } from './pipes/search.pipe';
     AdminFiestaComponent,
     NuevaFiestaComponent,
     TestComponent,
-<<<<<<< HEAD
+
     ChartComponent,
     SearchPipe,
 
-=======
-    ChartComponent
->>>>>>> 681260b00f449d34d9fac98f0ae8c2bfff0f5245
+
 
   ],
   imports: [

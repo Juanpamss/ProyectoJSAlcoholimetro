@@ -9,6 +9,7 @@ import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-a
 export class NotificacionComponent implements OnInit {
 
   model;
+  searchText:string;
 
   @Input() arregloNotificacion: any = []
 
@@ -20,6 +21,8 @@ export class NotificacionComponent implements OnInit {
 
   usuario: any = []
 
+  arrayNombres=[];
+
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
   }
@@ -27,6 +30,7 @@ export class NotificacionComponent implements OnInit {
   ngOnInit() {
 
     this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    this.llenarEquipos();
 
   }
 
@@ -43,5 +47,10 @@ export class NotificacionComponent implements OnInit {
 
   }
 
+  llenarEquipos(){
+    for (var i = 0; i < this.arregloNotificacion.length; i++) {
+      this.arrayNombres.push(this.arregloNotificacion[i].nombre);
+    }
+  }
 
 }
