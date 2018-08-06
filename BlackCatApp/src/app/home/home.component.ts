@@ -25,10 +25,7 @@ export class HomeComponent implements OnInit {
   final : any []
 
   auxNombres : any = []
-<<<<<<< HEAD
-=======
 
->>>>>>> 03f64ca0db48d3450bf2a6a2d615f33d8cab13f2
 
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
