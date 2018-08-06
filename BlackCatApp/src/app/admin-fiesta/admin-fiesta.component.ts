@@ -23,6 +23,8 @@ export class AdminFiestaComponent implements OnInit {
 
     this._servicio.buscarFiestaCreada.subscribe(mensaje => this.fiestasCreadas = mensaje)
 
+    this._servicio.fiestasCreadas.subscribe(mensaje => this.fiestasCreadas = mensaje)
+
     this.consultarFiestasCreadas()
 
   }

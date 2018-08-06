@@ -1,58 +1,69 @@
-<app-barra-navegacion></app-barra-navegacion>
-<app-navegador-secundario></app-navegador-secundario>
-<br>
-<br>
+<div class="rown">
 
-<div class="row" style="margin-left: 20px">
-  <button type="button" [routerLink]="['/nuevaFiesta']" class="btn btn-default btn-sm" style="margin-left: 0px">
-    <span class="glyphicon glyphicon-search">Crear nueva</span>
-  </button>
-</div>
-<br>
-<label style="color: white; margin-left: 20px">Buscar por fecha:</label>
-<div class="row" style="margin-left: 20px">
+  <div class="col-sm-12">
 
-  <form class="form-inline">
-    <div class="form-group">
-      <div class="input-group">
-        <input id="fechaBuscar" class="form-control" placeholder="yyyy-mm-dd"
-               name="dp"  ngbDatepicker #d="ngbDatepicker">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-            <span class="fa fa-calendar" style="font-size:18px;color:#93C54B"></span>
-          </button>
-        </div>
-      </div>
+    <app-barra-navegacion></app-barra-navegacion>
+    <app-navegador-secundario></app-navegador-secundario>
+    <br>
+    <br>
+
+    <div class="row" style="margin-left: 20px">
+      <button type="button" [routerLink]="['/nuevaFiesta']" class="btn btn-default btn-sm" style="margin-left: 0px">
+        <span class="glyphicon glyphicon-search">Crear nueva</span>
+      </button>
     </div>
-    <button type="button" (click)="buscarFecha('fechaBuscar')" class="btn btn-default btn-sm" style="margin-left: 0px">
-      <span class="glyphicon glyphicon-search">Buscar</span>
-    </button>
-  </form>
+    <br>
+    <label style="color: white; margin-left: 20px">Buscar por fecha:</label>
+    <div class="row" style="margin-left: 20px">
 
-</div>
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input id="fechaBuscar" class="form-control" placeholder="yyyy-mm-dd"
+                   name="dp" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                <span class="fa fa-calendar" style="font-size:18px;color:#93C54B"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="buscarFecha('fechaBuscar')" class="btn btn-default btn-sm"
+                style="margin-left: 0px">
+          <span class="glyphicon glyphicon-search">Buscar</span>
+        </button>
+      </form>
+
+    </div>
 
 
-<div class="col-sm-12">
+    <div class="col-sm-12">
 
-  <br>
+      <br>
 
-</div>
+    </div>
 
-<div class="col-sm-12">
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let info of fiestasCreadas; let indice = index">
-      <div class="card" style="width: 20.1rem; height: 27rem">
-        <div >
-          <img class="rounded float-right" src="{{info.fiestaIdFK.imagenLugar}}" alt="Card image cap" style="height: 15rem; width: 20rem">
-          <div class="card-body">
-            <h4 class="card-title">Lugar: {{info.fiestaIdFK.nombre}}</h4>
-            <p class="card-text">Fecha: {{info.fechaFiesta}}</p>
-            <p class="card-text">Hora: {{info.horaInicio}}</p>
-            <button class="btn btn-primary">Ver</button>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-3" *ngFor="let info of fiestasCreadas; let indice = index">
+          <div class="card" style="width: 20.1rem; height: 27rem">
+            <div>
+              <img class="rounded float-right" src="{{info.fiestaIdFK.imagenLugar}}" alt="Card image cap"
+                   style="height: 15rem; width: 20rem">
+              <div class="card-body">
+                <h4 class="card-title">Lugar: {{info.fiestaIdFK.nombre}}</h4>
+                <p class="card-text">Fecha: {{info.fechaFiesta}}</p>
+                <p class="card-text">Hora: {{info.horaInicio}}</p>
+                <button class="btn btn-primary">Ver</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="col-sm-3"></div>
     </div>
+
   </div>
-  <div class="col-sm-3"></div>
+
 </div>
+
