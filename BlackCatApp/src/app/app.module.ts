@@ -28,12 +28,8 @@ import { TestComponent } from './test/test.component';
 import { ChartComponent } from './chart/chart.component';
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-
 import {ButtonModule} from 'primeng/button';
-
 import {ChartModule} from 'primeng/chart';
-
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SearchPipe } from './pipes/search.pipe';
 
@@ -53,9 +49,13 @@ import { SearchPipe } from './pipes/search.pipe';
     AdminFiestaComponent,
     NuevaFiestaComponent,
     TestComponent,
+<<<<<<< HEAD
     ChartComponent,
     SearchPipe,
 
+=======
+    ChartComponent
+>>>>>>> 681260b00f449d34d9fac98f0ae8c2bfff0f5245
 
   ],
   imports: [
@@ -73,7 +73,6 @@ import { SearchPipe } from './pipes/search.pipe';
     ),
     FormsModule,
     AccordionModule,
-
     ReactiveFormsModule
   ],
   providers: [ServicioAlcoholimetroService,AuthGuard,AuthService],
