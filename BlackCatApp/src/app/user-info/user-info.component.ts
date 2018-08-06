@@ -17,8 +17,8 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit() {
 
-
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
+    //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
   }
 
 }

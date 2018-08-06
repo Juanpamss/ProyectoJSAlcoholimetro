@@ -10,9 +10,13 @@ export class EditarInfoUsuarioComponent implements OnInit {
 
   registerForm: FormGroup;
 
+  usuario : any = []
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
 
     this.registerForm = this.formBuilder.group({
       nombre: ['', Validators.required],
