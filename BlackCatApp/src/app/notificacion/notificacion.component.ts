@@ -31,6 +31,8 @@ export class NotificacionComponent implements OnInit {
 
     this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
     this.llenarEquipos();
+    console.log(this.arrayNombres)
+    console.log(this.arregloNotificacion)
 
   }
 
