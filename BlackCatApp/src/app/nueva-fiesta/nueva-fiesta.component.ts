@@ -218,29 +218,7 @@ export class NuevaFiestaComponent implements OnInit {
     this.listaBebidas(checkboxName2)
     this.listaCantidad(checkboxName3)
 
-    if(this.ctrl.value.hour < 9){
-
-      this.ctrl.value.hour = '0' + this.ctrl.value.hour;
-
-    }
-
-    if(this.ctrl.value.minute < 9){
-
-      this.ctrl.value.minute = '0' + this.ctrl.value.minute;
-
-    }
-
-    if(this.ctrl2.value.hour < 9){
-
-      this.ctrl2.value.hour = '0' + this.ctrl2.value.hour;
-
-    }
-
-    if(this.ctrl2.value.minute < 9){
-
-      this.ctrl2.value.minute = '0' + this.ctrl2.value.minute;
-
-    }
+    this.formatoHora()
 
     this.horaInicioF = this.ctrl.value.hour + ':' + this.ctrl.value.minute;
     this.horaFin = this.ctrl2.value.hour + ':' + this.ctrl2.value.minute;
@@ -276,6 +254,66 @@ export class NuevaFiestaComponent implements OnInit {
 
     var resetForm = <HTMLFormElement>document.getElementById('formCrearFiesta');
     resetForm.reset();
+  }
+
+  formatoHora(){
+
+    if(this.ctrl.value.hour < 9){
+
+      this.ctrl.value.hour = '0' + this.ctrl.value.hour;
+
+    }
+
+    if(this.ctrl.value.minute < 9){
+
+      this.ctrl.value.minute = '0' + this.ctrl.value.minute;
+
+    }
+
+    if(this.ctrl2.value.hour < 9){
+
+      this.ctrl2.value.hour = '0' + this.ctrl2.value.hour;
+
+    }
+
+    if(this.ctrl2.value.minute < 9){
+
+      this.ctrl2.value.minute = '0' + this.ctrl2.value.minute;
+
+    }
+
+    if(this.ctrl.value.hour > 20){
+
+      this.ctrl.value.minute = this.ctrl.value.minute + ' pm';
+
+    }else {
+
+      if(this.ctrl.value.hour < 9){
+
+        this.ctrl.value.minute = this.ctrl.value.minute + ' am';
+
+      }
+
+    }
+
+    if(this.ctrl2.value.hour > 20){
+
+      this.ctrl2.value.minute = this.ctrl2.value.minute + ' pm';
+
+    }else{
+
+      if(this.ctrl2.value.hour < 9){
+
+        this.ctrl2.value.minute = this.ctrl2.value.minute + ' am';
+
+      }
+
+    }
+
+
+
+
+
   }
 
 }
