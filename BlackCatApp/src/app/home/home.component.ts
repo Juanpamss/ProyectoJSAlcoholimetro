@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   notificaciones : any = []
   fiestas : any = []
-  usuario: any = []
+  usuario;
   id: number = 0
 
   invitados : any = []
@@ -27,15 +27,19 @@ export class HomeComponent implements OnInit {
   auxNombres : any = []
 
 
-  constructor(private _servicio: ServicioAlcoholimetroService) {
 
+  constructor(private _servicio: ServicioAlcoholimetroService) {
+    //this.usuario = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
 
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    console.log('home', JSON.parse(localStorage.getItem('currentUser')));
 
-    //console.log('usuario ingresado YA EN HOME: ', this.usuario)
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
+    //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+
+    console.log('usuario ingresado YA EN HOME: ', this.usuario)
 
     this._servicio.auxiliarNotificaciones = []
 

@@ -97,8 +97,8 @@ export class NuevaFiestaComponent implements OnInit {
 
   ngOnInit() {
 
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
-
+    //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
     this.consultarInvitados()
 
     this.quitarUsuario()

@@ -34,7 +34,8 @@ export class NotificacionComponent implements OnInit {
     this.llenar();
     console.log(this.arrayNombres)
     console.log(this.arregloNotificacion)
-    this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+    this.usuario = JSON.parse(localStorage.getItem('currentUser'));
+    //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
 
   }
