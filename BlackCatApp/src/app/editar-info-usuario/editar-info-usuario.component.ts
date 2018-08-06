@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-editar-info-usuario',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarInfoUsuarioComponent implements OnInit {
 
-  constructor() { }
+  registerForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+
+    this.registerForm = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      correo: ['', Validators.required, Validators.email],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+
   }
 
 }
