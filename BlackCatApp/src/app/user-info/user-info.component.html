@@ -1,17 +1,30 @@
 <div class="rown">
-  <div class="col-sm-12">
 
+  <div class="col-sm-12">
     <br>
-    <div class="card">
-      <img src="http://www.propinio.com/assets/i/icon-user.png" alt="John" style="width:100%">
-      <h1>{{usuario.nombre + ' ' + usuario.apellido}}</h1>
-      <p class="title">{{usuario.correo}}</p>
-      <p>Quito</p>
-      <div style="margin: 24px 0;">
-        <a><i class="fa fa-twitter"></i></a>
-        <a><i class="fa fa-facebook"></i></a>
+  </div>
+
+  <div class="col-sm-12">
+    <div class="jumbotron fond-container">
+
+      <div class="card border-success mb-3">
+
+        <div class="card-header"style="text-align: center"><h5>TU INFORMACION</h5></div>
+        <img class="img-fluid" src="https://png.icons8.com/ios/1600/user-male-circle-filled.png" alt="John" >
+        <div class="card-body" style="text-align: center">
+          <h4 class="card-title">{{usuario.nombre + ' ' + usuario.apellido}}</h4>
+          <p class="title">{{usuario.correo}}</p>
+          <p>Quito</p>
+          <div style="margin: 24px 0;">
+            <p>Redes Sociales:</p>
+            <a><i class="fa fa-twitter"></i></a>
+            <a><i class="fa fa-facebook"></i></a>
+          </div>
+          <p><button class="btn btn-success btn-lg btn-block" [routerLink]="['/editarUsuario']">Editar</button></p>
+        </div>
       </div>
-      <p><button [routerLink]="['/editarUsuario']">Editar</button></p>
+
+
     </div>
 
 
