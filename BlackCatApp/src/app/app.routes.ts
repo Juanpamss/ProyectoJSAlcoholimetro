@@ -25,18 +25,15 @@ export const RUTAS_APP: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+
   },
 
   {
     path: 'portal',
     component: PortalComponent
   },
-  {
-    path: 'adminFiesta',
-    component: AdminFiestaComponent,
-    //canActivate: [AuthGuard]
-  },
+
   {
     path: 'nuevaFiesta',
     component: NuevaFiestaComponent,
@@ -56,6 +53,10 @@ export const RUTAS_APP: Routes = [
     path: 'editarUsuario',
     component: EditarInfoUsuarioComponent,
     //canActivate: [AuthGuard]
+  },
+  {
+    path: 'adminFiesta',
+    component: AdminFiestaComponent
   },
   {
     path: '**',

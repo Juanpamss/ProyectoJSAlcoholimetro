@@ -67,6 +67,7 @@ import { EditarInfoUsuarioComponent } from './editar-info-usuario/editar-info-us
     BrowserAnimationsModule,
     ChartModule,
     BrowserModule,
+    RouterModule.forChild(RUTAS_APP),
     NgbModule.forRoot(),
     RouterModule.forRoot(
 
