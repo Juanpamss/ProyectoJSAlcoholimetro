@@ -158,9 +158,9 @@ export class ServicioAlcoholimetroService {
               'horaInicio': data.horaInicio
             })
 
-          this.auxiliarNombres.push({
-            'nombre': data.fiestaIdFK.nombre
-          })
+          this.auxiliarNombres.push(
+            data.fiestaIdFK.nombre
+          )
 
         }
       )
