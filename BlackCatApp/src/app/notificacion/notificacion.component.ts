@@ -11,8 +11,12 @@ export class NotificacionComponent implements OnInit {
   model;
   searchText:string;
 
-  @Input() arregloNotificacion: any = []
-  @Input() arrayNombres=[];
+  final : any []
+
+  auxNombres : any = []
+
+  arregloNotificacion: any = []
+  arrayNombres=[];
 
   //arregloNotificaciones: any = []
   auxiliar: any = []
@@ -43,8 +47,14 @@ export class NotificacionComponent implements OnInit {
     this.buscarLugar()
 
     console.log('lugar fiesta',this.lugaresFiesta)
+    this.inicio();
 
+  }
 
+  inicio(){
+    this.arregloNotificacion = this._servicio.retornarAuxililarNotificaciones()
+
+    this.arrayNombres = this._servicio.retornarAuxililarNombres()
   }
 
   onNameKeyUp(event: any) {

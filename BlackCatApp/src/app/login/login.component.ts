@@ -57,13 +57,6 @@ export class LoginComponent implements OnInit {
   }
 
 
-  ingreso(estado: boolean) {
-    if (estado == true) {
-
-    }
-
-  }
-
 
     onSubmit(){
       this.submitted = true;

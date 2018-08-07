@@ -81,8 +81,9 @@ export class AuthService {
       //this._servicio.cambiarFiestasCreadas(this.fiestaUsuario)
 
       this.setLogguedIn(estado);
-      this.router.navigate(['home']);
-
+      //console.log(JSON.parse(localStorage.getItem('currentUser'))[0].id)
+      this.router.navigate(['/usuario',JSON.parse(localStorage.getItem('currentUser')).id,'home']);
+      //this.router.navigate(['/home']);
     } else {
       alert('Credenciales no validas')
     }

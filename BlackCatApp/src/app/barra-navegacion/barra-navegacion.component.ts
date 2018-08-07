@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 import {AuthService} from "../servicios/auth.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {relativeToRootDirs} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -11,7 +13,7 @@ export class BarraNavegacionComponent implements OnInit {
 
   usuario : any = []
 
-  constructor(private _servicio: ServicioAlcoholimetroService, private servicio: AuthService) { }
+  constructor(private _servicio: ServicioAlcoholimetroService, private servicio: AuthService,private route: ActivatedRoute, private router: Router) { }
 
   notificaciones : number
 
@@ -27,4 +29,19 @@ export class BarraNavegacionComponent implements OnInit {
     this.servicio.logout();
   }
 
+  irAdminFiesta(){
+    this.router.navigate(['administrarFiesta'], {relativeTo: this.route})
+  }
+
+  irTest(){
+    this.router.navigate(['test'], {relativeTo: this.route})
+  }
+
+  irHome(){
+    this.router.navigate(['home'], {relativeTo: this.route})
+  }
+
+  irInfoUsuario(){
+    this.router.navigate(['informacionUsuario'], {relativeTo: this.route})
+  }
 }

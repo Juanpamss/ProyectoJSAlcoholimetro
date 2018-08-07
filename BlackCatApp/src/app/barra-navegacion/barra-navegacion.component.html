@@ -8,31 +8,31 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/home']">Notificaciones <span class="badge" style="background-color: white; color: black">{{notificaciones}}</span> </a>
+        <a class="nav-link" (click)="irHome()">Notificaciones <span class="badge" style="background-color: white; color: black">{{notificaciones}}</span> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/adminFiesta">Administracion de Fiestas</a>
+        <a class="nav-link" (click)="irAdminFiesta()">Administracion de Fiestas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/test">Test Alcohol</a>
+        <a class="nav-link" (click)="irTest()">Test Alcohol</a>
       </li>
 
     </ul>
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <button [routerLink]="['/home']" type="button" class="btn btn-default btn-lg">
+        <button (click)="irHome()" type="button" class="btn btn-default btn-lg">
           <span class="fa fa-glass" style="font-size:18px;color:#93C54B"></span> Home
         </button>
       </li>
       <li class="nav-item">
-        <button [routerLink]="['/home']" type="button" class="btn btn-default btn-lg">
+        <button (click)="irHome()" type="button" class="btn btn-default btn-lg">
           <span class="fa fa-user" style="font-size:18px;color:#93C54B; width: 0px"></span>
         </button>
       </li>
       <li class="nav-item dropdown" style="margin-left: -15px">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{usuario.nombre}} {{usuario.apellido}}</a>
         <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" [routerLink]="['/infoUsuario']">Administrar Cuenta</a>
+          <a class="dropdown-item" (click)="irInfoUsuario()" >Administrar Cuenta</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item"  (click)="salir()" href="#">Salir</a>
         </div>

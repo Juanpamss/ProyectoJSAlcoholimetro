@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
 
     this.usuario = JSON.parse(localStorage.getItem('currentUser'));
     //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
-
+    //console.log(JSON.parse(localStorage.getItem('currentUser')).id)
     console.log('usuario ingresado YA EN HOME: ', this.usuario)
 
     this._servicio.auxiliarNotificaciones = []
@@ -64,9 +64,9 @@ export class HomeComponent implements OnInit {
 
     this.bebidas = this._servicio.retornarBebidas()
 
-    this.final = this._servicio.retornarAuxililarNotificaciones()
+    //this.final = this._servicio.retornarAuxililarNotificaciones()
 
-    this.auxNombres = this._servicio.retornarAuxililarNombres()
+    //this.auxNombres = this._servicio.retornarAuxililarNombres()
 
 
     //this._servicio.cambiarFiestasCreadas(this.notificaciones.length)

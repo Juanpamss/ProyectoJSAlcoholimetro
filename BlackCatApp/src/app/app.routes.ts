@@ -9,6 +9,7 @@ import {NuevaFiestaComponent} from "./nueva-fiesta/nueva-fiesta.component";
 import {TestComponent} from "./test/test.component";
 import {UserInfoComponent} from "./user-info/user-info.component";
 import {EditarInfoUsuarioComponent} from "./editar-info-usuario/editar-info-usuario.component";
+import {NotificacionComponent} from "./notificacion/notificacion.component";
 
 
 export const RUTAS_APP: Routes = [
@@ -23,9 +24,32 @@ export const RUTAS_APP: Routes = [
   },
 
   {
-    path: 'home',
+    //path: 'home',
+    path: 'usuario/:idUsuario',
+    //:idUsuario/home
     component: HomeComponent,
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'administrarFiesta',
+        component: AdminFiestaComponent
+      },
+      {
+        path: 'test',
+        component: TestComponent,
+
+      },
+      {
+        path: 'home',
+        component: NotificacionComponent,
+
+      },
+      {
+        path: 'informacionUsuario',
+        component: UserInfoComponent,
+        //canActivate: [AuthGuard]
+      }
+    ]
 
   },
 
@@ -39,25 +63,14 @@ export const RUTAS_APP: Routes = [
     component: NuevaFiestaComponent,
     //canActivate: [AuthGuard]
   },
-  {
-    path: 'test',
-    component: TestComponent,
-    //canActivate: [AuthGuard]
-  },
-  {
-    path: 'infoUsuario',
-    component: UserInfoComponent,
-    //canActivate: [AuthGuard]
-  },
+
+
   {
     path: 'editarUsuario',
     component: EditarInfoUsuarioComponent,
     //canActivate: [AuthGuard]
   },
-  {
-    path: 'adminFiesta',
-    component: AdminFiestaComponent
-  },
+
   {
     path: '**',
     pathMatch: 'full',
