@@ -158,9 +158,9 @@ export class ServicioAlcoholimetroService {
               'horaInicio': data.horaInicio
             })
 
-          this.auxiliarNombres.push({
-            'nombre': data.fiestaIdFK.nombre
-          })
+          this.auxiliarNombres.push(
+            data.fiestaIdFK.nombre
+          )
 
         }
       )
@@ -297,6 +297,23 @@ export class ServicioAlcoholimetroService {
         }
 
       )
+  }
+
+  actualizarInfoUsuario(id: number, nombre: string, apellido: string, correo: string, password: string){
+
+    this.httpClient.put(`http://localhost:1337/usuario/${id}`, {
+
+      nombre : nombre,
+      apellido : apellido,
+      correo : correo,
+      password : password
+
+    }).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+
   }
 
 

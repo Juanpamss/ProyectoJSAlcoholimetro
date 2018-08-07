@@ -10,29 +10,43 @@
         <span class="fa fa-user fa-w-14 fa-5x"></span>
       </div>
       <hr class="my-4">
-      <form [formGroup]="registerForm">
+      <form id="formEditar" [formGroup]="formEditar" (submit)="editarUsuario()">
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" required>
+          <input type="text" class="form-control" formControlName="nombre" id="nombre" [value]=usuario.nombre [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+          <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+            <div *ngIf="f.nombre.errors.required">Nombre es requerido</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="apellido">Apellido</label>
-          <input type="text" class="form-control" id="apellido">
+          <input type="text" class="form-control" id="apellido" formControlName="apellido" [value]=usuario.apellido [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }">
+          <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+            <div *ngIf="f.apellido.errors.required">Apellido es requerido</div>
+          </div>
         </div>
 
         <div class="form-group">
-          <label for="correo">Apellido</label>
-          <input type="text" class="form-control" id="correo">
+          <label for="correo">Correo Electrónico</label>
+          <input id="correo" [email]="true" type="email" class="form-control" formControlName="correo" [value]=usuario.correo [ngClass]="{ 'is-invalid': submitted && f.correo.errors }">
+          <div *ngIf="submitted && f.correo.invalid" class="invalid-feedback">
+            <div *ngIf="f.correo.errors.required">Correo es requerido</div>
+            <div *ngIf="f.correo.errors.email">Correo Invalido</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="text" class="form-control" id="password">
+          <input type="password" class="form-control" id="password" formControlName="password" [value]=usuario.password [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Contraseña es requerido</div>
+            <div *ngIf="f.password.errors.minlength">Contraseña debe tener minimo 6 caracteres</div>
+          </div>
         </div>
 
         <div class="" style="text-align: center">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" >Submit</button>
         </div>
       </form>
     </div>

@@ -23,6 +23,9 @@ export class NotificacionComponent implements OnInit {
 
   usuario: any = []
 
+  lugaresFiesta : any = []
+
+  arreglito = ["Bipolar","Bunga","Hash"]
 
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
@@ -36,6 +39,10 @@ export class NotificacionComponent implements OnInit {
     console.log(this.arregloNotificacion)
     this.usuario = JSON.parse(localStorage.getItem('currentUser'));
     //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
+
+    this.buscarLugar()
+
+    console.log('lugar fiesta',this.lugaresFiesta)
 
 
   }
@@ -58,5 +65,13 @@ export class NotificacionComponent implements OnInit {
       this.arrayNombres.push(this.arregloNotificacion[i].nombre);
     }
   }
+
+  buscarLugar(){
+
+    this.lugaresFiesta = this._servicio.retornarLugares()
+
+  }
+
+
 
 }
