@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-fiesta',
@@ -14,7 +15,7 @@ export class AdminFiestaComponent implements OnInit {
 
   fecha: string
 
-  constructor(private _servicio: ServicioAlcoholimetroService) {
+  constructor(private _servicio: ServicioAlcoholimetroService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -59,5 +60,6 @@ export class AdminFiestaComponent implements OnInit {
     this._servicio.cambiarBuscarFiestaCreada(this.fiestasCreadas)
 
   }
+
 
 }

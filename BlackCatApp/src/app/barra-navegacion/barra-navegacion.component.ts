@@ -44,4 +44,10 @@ export class BarraNavegacionComponent implements OnInit {
   irInfoUsuario(){
     this.router.navigate(['informacionUsuario'], {relativeTo: this.route})
   }
+
+  irNuevaFiesta(){
+    //this.router.navigate(['/usuario',JSON.parse(localStorage.getItem('currentUser')).id,'home','/crearNuevaFiesta']);
+    this.router.navigate(['crearNuevaFiesta'], {relativeTo: this.route})
+  }
+
 }

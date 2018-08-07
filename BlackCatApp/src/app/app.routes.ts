@@ -32,7 +32,8 @@ export const RUTAS_APP: Routes = [
     children: [
       {
         path: 'administrarFiesta',
-        component: AdminFiestaComponent
+        component: AdminFiestaComponent,
+
       },
       {
         path: 'test',
@@ -47,22 +48,25 @@ export const RUTAS_APP: Routes = [
       {
         path: 'informacionUsuario',
         component: UserInfoComponent,
-        //canActivate: [AuthGuard]
+
+      },
+      {
+        path: 'crearNuevaFiesta',
+        component: NuevaFiestaComponent,
+
       }
+
     ]
 
   },
+
 
   {
     path: 'portal',
     component: PortalComponent
   },
 
-  {
-    path: 'nuevaFiesta',
-    component: NuevaFiestaComponent,
-    //canActivate: [AuthGuard]
-  },
+
 
 
   {

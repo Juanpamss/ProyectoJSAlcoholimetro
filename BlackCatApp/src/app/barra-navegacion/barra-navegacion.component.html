@@ -8,11 +8,20 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" (click)="irHome()">Notificaciones <span class="badge" style="background-color: white; color: black">{{notificaciones}}</span> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" (click)="irHome()">Notificaciones <span class="badge" style="background-color: white; color: black">{{notificaciones}}</span> <span class="sr-only">(current)</span> </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="irAdminFiesta()">Administracion de Fiestas</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Administracion de Fiestas </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" (click)="irNuevaFiesta()" >Crear Nueva Fiesta</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="irAdminFiesta()">Ver/Buscar Fiesta</a>
+        </div>
       </li>
+
+
       <li class="nav-item">
         <a class="nav-link" (click)="irTest()">Test Alcohol</a>
       </li>
