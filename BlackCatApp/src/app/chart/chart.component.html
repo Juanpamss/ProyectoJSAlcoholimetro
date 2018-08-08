@@ -4,10 +4,15 @@
     <button pButton type="button" (click)="nuevoTest()" label="Nuevo Test" class="ui-button-success"></button>
   </div>
 
-  <div class="col-sm-12" align="center">
-    <h3 align="center" style="color: white">Estadísticas</h3>
+  <div class="row">
+
+    <div class="col-sm-12" align="center">
+      <h3 style="color: white">Estadísticas</h3>
+    </div>
+    <br>
+
   </div>
-  <br>
+
 
   <div class="col-sm-12" align="center">
     <p-chart type="bar" [data]="data" width="80vw" height="80vh"></p-chart>
