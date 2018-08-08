@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     //return this._auth.isLogguedIn;
     if (localStorage.getItem('currentUser')) {
       // logged in so return true
-      console.log('hola',localStorage.getItem('currentUser'))
+      //console.log('hola',localStorage.getItem('currentUser'))
       return true;
     }
 

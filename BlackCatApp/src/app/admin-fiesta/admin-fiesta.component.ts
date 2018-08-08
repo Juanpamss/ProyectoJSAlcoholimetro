@@ -53,6 +53,14 @@ export class AdminFiestaComponent implements OnInit {
 
   }
 
+  mostrarTodas(){
+
+    this.fiestasCreadas = this._servicio.retornarFiestasCreadas(this.usuario.id)
+
+    this._servicio.cambiarBuscarFiestaCreada(this.fiestasCreadas)
+
+  }
+
   mandarDatos() {
 
     console.log('mandar', this.fiestasCreadas)

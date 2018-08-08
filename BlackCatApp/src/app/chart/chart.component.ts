@@ -20,20 +20,33 @@ export class ChartComponent implements OnInit {
 
   constructor(private _servicio: ServicioAlcoholimetroService) {
 
+  }
+
+  ngOnInit() {
+
     this.data = {
       labels: ['Resultados'],
       datasets: []
     }
 
-  }
+    this._servicio.testsRealizados.subscribe(mensaje => this.testsUsuario = mensaje)
 
-  ngOnInit() {
+    this._servicio.valorArduino.subscribe(mensaje => this.valoresArduino = mensaje)
 
     this.usuario = JSON.parse(localStorage.getItem('currentUser'));
 
-    this.testsUsuario = this._servicio.retornarTests()
+    this.testsUsuario = this._servicio.retornarTests(this.usuario.id)
 
     this.valoresArduino = this._servicio.retornarValoresArduino()
+
+    this.llenarChart()
+
+
+  }
+
+  llenarChart(){
+
+    this.data.datasets = []
 
     for(let i = 0; i < this.testsUsuario.length; i++){
 
@@ -48,23 +61,21 @@ export class ChartComponent implements OnInit {
 
     }
 
+
   }
 
   nuevoTest(){
 
     this.obtenerFecha()
 
-    this._servicio.guardarTest(this.valoresArduino[this.valoresArduino.length-1], this.fecha, this.usuario.id)
+    this.nuevaInfo()
 
-    this._servicio.obtenerTestsUsuario(this.usuario.id)
+    console.log('nuevo: ', this.valoresArduino)
 
-    this._servicio.obtenerValorArduino()
+    this._servicio.guardarTest(this.valoresArduino[this.valoresArduino.length-1].valorMedido, this.fecha, this.usuario.id)
 
-    this.testsUsuario = this._servicio.retornarTests()
 
-    this.valoresArduino = this._servicio.retornarValoresArduino()
-
-    for(let i = 0; i < this.testsUsuario.length; i++){
+    /*for(let i = 0; i < this.testsUsuario.length; i++){
 
       this.data.datasets.push(
         {
@@ -75,8 +86,15 @@ export class ChartComponent implements OnInit {
         }
       )
 
-    }
+    }*/
 
+    this._servicio.cambiarTests(this._servicio.retornarTests(this.usuario.id))
+
+  }
+
+  nuevaInfo(){
+
+    this.valoresArduino = this._servicio.retornarValoresArduino()
 
   }
 
@@ -86,6 +104,14 @@ export class ChartComponent implements OnInit {
 
     this.fecha = utc
 
+  }
+
+  wait(ms){
+    var start = new Date().getTime();
+    var end = start;
+    while(end < start + ms) {
+      end = new Date().getTime();
+    }
   }
 
 }

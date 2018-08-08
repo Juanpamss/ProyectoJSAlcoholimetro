@@ -39,14 +39,12 @@ export class NotificacionComponent implements OnInit {
   ngOnInit() {
 
     this.llenar();
-    console.log(this.arrayNombres)
-    console.log(this.arregloNotificacion)
+
     this.usuario = JSON.parse(localStorage.getItem('currentUser'));
     //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
 
     this.buscarLugar()
 
-    console.log('lugar fiesta',this.lugaresFiesta)
     this.inicio();
 
   }

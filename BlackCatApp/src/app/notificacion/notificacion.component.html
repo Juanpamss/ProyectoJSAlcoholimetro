@@ -1,7 +1,10 @@
 <div class="row">
 
-  <div class="col-sm-12">
+  <div class="col-sm-12" align="center">
+
     <br>
+    <h2 style="color: white">Fiestas Próximas</h2>
+    <!--<br>
     <label style="color: white">Buscar por lugar:</label>
     <br>
     <input type="text" [(ngModel)]="searchText" type="search" (keyup)="onNameKeyUp($event)" placeholder="Lugar" name="search">
@@ -9,8 +12,8 @@
       <span class="glyphicon glyphicon-search">Buscar</span>
     </button>
     <br>
-    <br>
-    <label style="color: white">Buscar por fecha:</label>
+    <br>-->
+    <!--<label style="color: white">Buscar por fecha:</label>
     <form class="form-inline">
       <div class="form-group">
         <div class="input-group">
@@ -26,7 +29,7 @@
       <button type="button"  class="btn btn-default btn-sm" style="margin-left: 0px">
         <span class="glyphicon glyphicon-search">Buscar</span>
       </button>
-    </form>
+    </form>-->
 
   </div>
 
@@ -43,21 +46,17 @@
 
       <div class="row">
 
-        <div class="col-sm-4" *ngFor="let nom of arreglito | search: searchText">
-          <div *ngFor="let info of arregloNotificacion" >
-            <div *ngIf="info.nombre == nom">
+        <div class="col-sm-4" *ngFor="let info of arregloNotificacion">
               <div class="card">
                 <img class="rounded float-right img-fluid" src={{info.imagenLugar}} alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">Lugar: {{info.nombre}}</h4>
                   <p class="card-text">Fecha: {{info.fechaFiesta}}</p>
-                  <p class="card-text">Hora:{{info.horaInicio}}</p>
+                  <p class="card-text">Hora: {{info.horaInicio}}</p>
                   <!--<button class="btn btn-primary" (click)="eliminar()">Ver</button>-->
                 </div>
               </div>
             </div>
-          </div>
-        </div>
       </div>
 
 

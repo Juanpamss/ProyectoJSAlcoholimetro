@@ -250,6 +250,9 @@ export class NuevaFiestaComponent implements OnInit {
 
     this._servicio.cambiarFiestasCreadas(this._servicio.retornarFiestasCreadas(this.usuario.id))
 
+    alert('Fiesta creada con exito!')
+
+
   }
 
   resetForm() {

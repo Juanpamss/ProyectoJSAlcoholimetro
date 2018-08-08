@@ -42,6 +42,12 @@ export class ServicioAlcoholimetroService {
   private fuenteBuscarFiestaCreada = new BehaviorSubject<any>([]);
   buscarFiestaCreada = this.fuenteBuscarFiestaCreada.asObservable();
 
+  private fuenteTests = new BehaviorSubject<any>([]);
+  testsRealizados = this.fuenteTests.asObservable();
+
+  private fuenteArduino = new BehaviorSubject<any>([]);
+  valorArduino = this.fuenteArduino.asObservable();
+
 
 
   constructor(private httpClient: HttpClient) {
@@ -76,6 +82,18 @@ export class ServicioAlcoholimetroService {
   cambiarBuscarFiestaCreada(mensaje){
 
     this.fuenteBuscarFiestaCreada.next(mensaje)
+
+  }
+
+  cambiarTests(mensaje){
+
+    this.fuenteTests.next(mensaje)
+
+  }
+
+  cambiarArduino(mensaje){
+
+    this.fuenteArduino.next(mensaje)
 
   }
 
@@ -332,7 +350,7 @@ export class ServicioAlcoholimetroService {
 
           this.valoresArduino = data
 
-          //console.log('SERVER ARDUINO: ', this.valoresArduino)
+          this.cambiarArduino(this.valoresArduino)
 
         }
 
@@ -346,6 +364,8 @@ export class ServicioAlcoholimetroService {
         (data:any[]) => {
 
           this.testsUsuario = data
+
+          this.cambiarTests(data)
 
         }
 
@@ -363,8 +383,11 @@ export class ServicioAlcoholimetroService {
     }).subscribe(
       res => {
         //console.log(res);
+
       }
     );
+
+    this.obtenerTestsUsuario(usuario)
 
   }
 
@@ -421,13 +444,19 @@ export class ServicioAlcoholimetroService {
 
   }
 
-  retornarTests(){
+  retornarTests(usuario: number){
+
+    this.obtenerTestsUsuario(usuario)
+
+    //console.log('en metodo test: ', this.testsUsuario)
 
     return this.testsUsuario
 
   }
 
   retornarValoresArduino(){
+
+    this.obtenerValorArduino()
 
     return this.valoresArduino
 
