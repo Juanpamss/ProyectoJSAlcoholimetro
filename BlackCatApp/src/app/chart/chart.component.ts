@@ -90,6 +90,8 @@ export class ChartComponent implements OnInit {
 
     this._servicio.cambiarTests(this._servicio.retornarTests(this.usuario.id))
 
+    alert('Acerquese al sensor y sople, los resultados se presentaran luego de unos segundos');
+
   }
 
   nuevaInfo(){
