@@ -49,12 +49,18 @@ export const RUTAS_APP: Routes = [
         path: 'informacionUsuario',
         component: UserInfoComponent,
 
+
       },
       {
         path: 'crearNuevaFiesta',
         component: NuevaFiestaComponent,
 
-      }
+      },
+
+      {
+        path: 'editarUsuario',
+        component: EditarInfoUsuarioComponent,
+      },
 
     ]
 
@@ -66,14 +72,6 @@ export const RUTAS_APP: Routes = [
     component: PortalComponent
   },
 
-
-
-
-  {
-    path: 'editarUsuario',
-    component: EditarInfoUsuarioComponent,
-    //canActivate: [AuthGuard]
-  },
 
   {
     path: '**',

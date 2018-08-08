@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-editar-info-usuario',
@@ -20,7 +21,7 @@ export class EditarInfoUsuarioComponent implements OnInit {
   correo: string
   password: string
 
-  constructor(private formBuilder: FormBuilder, private _servicio: ServicioAlcoholimetroService) { }
+  constructor(private formBuilder: FormBuilder, private _servicio: ServicioAlcoholimetroService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
@@ -61,6 +62,11 @@ export class EditarInfoUsuarioComponent implements OnInit {
 
     this._servicio.actualizarInfoUsuario(this.usuario.id, this.nombre, this.apellido, this.correo, this.password)
 
+  }
+
+  irCancelar(){
+    //this.router.navigate(['/usuario',JSON.parse(localStorage.getItem('currentUser')).id,'home','/crearNuevaFiesta']);
+    this.router.navigate(['/usuario',JSON.parse(localStorage.getItem('currentUser')).id,'home']);
   }
 
 }
