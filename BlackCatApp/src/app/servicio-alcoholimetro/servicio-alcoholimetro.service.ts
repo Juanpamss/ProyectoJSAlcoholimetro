@@ -25,6 +25,8 @@ export class ServicioAlcoholimetroService {
 
   auxiliarNombres : any = []
 
+  testsUsuario : any = []
+
   private fuenteNotificaciones = new BehaviorSubject<any>([]);
   numNotificaciones = this.fuenteNotificaciones.asObservable();
 
@@ -125,6 +127,8 @@ export class ServicioAlcoholimetroService {
           this.consultarLugares()
 
           this.consultarBebidas()
+
+          this.obtenerTestsUsuario(idUsuario)
 
           //this.auxiliarNotificaciones = []
 
@@ -316,6 +320,18 @@ export class ServicioAlcoholimetroService {
 
   }
 
+  obtenerTestsUsuario(usuario: number){
+
+    this.httpClient.get(`http://localhost:1337/test?testIdFK=${usuario}`)
+      .subscribe(
+        (data:any[]) => {
+
+          this.testsUsuario = data
+
+        }
+
+      )
+  }
 
 
   retornarLugarFiestas(){
@@ -367,6 +383,12 @@ export class ServicioAlcoholimetroService {
   retornarAuxililarNombres(){
 
     return this.auxiliarNombres
+
+  }
+
+  retornarTests(){
+
+    return this.testsUsuario
 
   }
 

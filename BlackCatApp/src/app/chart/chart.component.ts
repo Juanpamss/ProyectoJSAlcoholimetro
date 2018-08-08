@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServicioAlcoholimetroService} from "../servicio-alcoholimetro/servicio-alcoholimetro.service";
 
 @Component({
   selector: 'app-chart',
@@ -9,33 +10,42 @@ export class ChartComponent implements OnInit {
 
   data: any;
 
-  constructor() {
+  testsUsuario : any = []
+
+  constructor(private _servicio : ServicioAlcoholimetroService) {
+
     this.data = {
-      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-      datasets: [
-        {
-          label: 'My First dataset',
-          backgroundColor: '#42A5F5',
-          borderColor: '#1E88E5',
-          data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label: 'My Second dataset',
-          backgroundColor: '#9CCC65',
-          borderColor: '#7CB342',
-          data: [28, 48, 40, 19, 86, 27, 90]
-        },
-        {
-          label: 'My Third dataset',
-          backgroundColor: '#cc4e75',
-          borderColor: '#b33546',
-          data: [28, 48, 40, 19, 86, 27, 90]
-        }
-      ]
+      labels: ['Resultados'],
+      datasets: []
     }
+
   }
 
   ngOnInit() {
+
+    this.testsUsuario = this._servicio.retornarTests()
+
+
+
+    for(let i=0; i < this.testsUsuario.length; i++){
+
+          this.data.datasets.push(
+
+            {
+              label: 'Test ' + (i+1),
+              backgroundColor: '#42A5F5',
+              borderColor: '#1E88E5',
+              data: [this.testsUsuario[i].gradoAlcohol]
+            }
+
+          )
+
+    }
+
+
+
+    console.log('TEST:', this.testsUsuario)
+
   }
 
 }
