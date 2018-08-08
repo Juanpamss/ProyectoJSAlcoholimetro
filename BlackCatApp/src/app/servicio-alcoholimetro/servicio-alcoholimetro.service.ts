@@ -27,6 +27,8 @@ export class ServicioAlcoholimetroService {
 
   testsUsuario : any = []
 
+  valoresArduino : any = []
+
   private fuenteNotificaciones = new BehaviorSubject<any>([]);
   numNotificaciones = this.fuenteNotificaciones.asObservable();
 
@@ -129,6 +131,8 @@ export class ServicioAlcoholimetroService {
           this.consultarBebidas()
 
           this.obtenerTestsUsuario(idUsuario)
+
+          this.obtenerValorArduino()
 
           //this.auxiliarNotificaciones = []
 
@@ -314,10 +318,25 @@ export class ServicioAlcoholimetroService {
 
     }).subscribe(
       res => {
-        console.log(res);
+        //console.log(res);
       }
     );
 
+  }
+
+  obtenerValorArduino(){
+
+    this.httpClient.get(`http://localhost:1338/sensor`)
+      .subscribe(
+        (data:any[]) => {
+
+          this.valoresArduino = data
+
+          //console.log('SERVER ARDUINO: ', this.valoresArduino)
+
+        }
+
+      )
   }
 
   obtenerTestsUsuario(usuario: number){
@@ -331,6 +350,22 @@ export class ServicioAlcoholimetroService {
         }
 
       )
+  }
+
+  guardarTest(grado: number, hora: string, usuario:number){
+
+    this.httpClient.post(`http://localhost:1337/test`, {
+
+      gradoAlcohol : grado,
+      horaTest : hora,
+      testIdFK : usuario
+
+    }).subscribe(
+      res => {
+        //console.log(res);
+      }
+    );
+
   }
 
 
@@ -389,6 +424,12 @@ export class ServicioAlcoholimetroService {
   retornarTests(){
 
     return this.testsUsuario
+
+  }
+
+  retornarValoresArduino(){
+
+    return this.valoresArduino
 
   }
 

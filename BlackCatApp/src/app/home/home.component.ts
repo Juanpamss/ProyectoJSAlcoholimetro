@@ -34,12 +34,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log('home', JSON.parse(localStorage.getItem('currentUser')));
+    //console.log('home', JSON.parse(localStorage.getItem('currentUser')));
 
     this.usuario = JSON.parse(localStorage.getItem('currentUser'));
     //this._servicio.usuarioLogeado.subscribe(mensaje => this.usuario = mensaje)
     //console.log(JSON.parse(localStorage.getItem('currentUser')).id)
-    console.log('usuario ingresado YA EN HOME: ', this.usuario)
+    //console.log('usuario ingresado YA EN HOME: ', this.usuario)
 
     this._servicio.auxiliarNotificaciones = []
 
